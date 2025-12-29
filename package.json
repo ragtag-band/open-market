@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "http-server ./web -p 8080 -c-1 --cors",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js NODE_ENV=development"
   },
   "dependencies": {
     "express": "^5.1.0",
