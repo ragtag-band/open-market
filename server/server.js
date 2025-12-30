@@ -443,6 +443,7 @@ apiRouter.post("/accounts/seller/validate-registration-number", (req, res) => {
  *         description: 아이디 또는 비밀번호 불일치
  */
 apiRouter.post("/accounts/signin", (req, res) => {
+  // console.log("req.body:", req.body);
   const { username, password } = req.body;
 
   const db = router.db;
