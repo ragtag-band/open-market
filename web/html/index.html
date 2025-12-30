@@ -6,8 +6,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZADU - 오픈 마켓</title>
+
+    <!-- Base CSS 연결 -->
+    <link rel="stylesheet" href="../styles/base/reset.css" />
+    <link rel="stylesheet" href="../styles/base/typography.css" />
+    <link rel="stylesheet" href="../styles/base/variables.css" />
+
+    <!-- 헤더 CSS 연결 -->
+    <link rel="stylesheet" href="../styles/components/header.css" />
   </head>
   <body>
-    오픈 마켓 프로젝트.
+    <!--  헤더  -->
+    <header class="header">
+      <div class="header__inner">
+        <!-- 로고 -->
+        <h1 class="header__logo">
+          <a href="./index.html" aria-label="홈으로">
+            <img src="../assets/images/Logo-jadu.png" alt="ZADU" />
+          </a>
+        </h1>
+
+        <!-- 검색창 -->
+        <form class="header__search" role="search">
+          <input
+            class="header__search-input"
+            type="search"
+            placeholder="상품을 검색해보세요!"
+            aria-label="상품 검색"
+          />
+          <button class="header__search-btn" type="submit" aria-label="검색">
+            <svg class="icon" aria-hidden="true">
+              <use href="../assets/icons/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+
+        <!-- 메뉴 -->
+        <nav class="header__menu" aria-label="사용자 메뉴">
+          <a
+            class="header__menu-item"
+            href="장바구니 버튼을 누르면 이동할 페이지 주소 삽입"
+            aria-label="장바구니"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="../assets/icons/sprite.svg#icon-cart"></use>
+            </svg>
+            <span class="header__menu-text">장바구니</span>
+          </a>
+
+          <a
+            class="header__menu-item"
+            href="마이페이지 버튼을 누르면 이동할 페이지 주소 삽입"
+            aria-label="마이페이지"
+          >
+            <svg class="icon" aria-hidden="true">
+              <use href="../assets/icons/sprite.svg#icon-user"></use>
+            </svg>
+            <span class="header__menu-text">마이페이지</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!--  헤더 -->
   </body>
 </html>
