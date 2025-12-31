@@ -34,47 +34,17 @@
           </div>
           <!-----------------/ quantity select /------------------->
           <div class="quantity-select">
-            <button class="btn-quantity" id="decrease">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 10H20" stroke="#C4C4C4" stroke-width="2" />
-              </svg>
-              <svg
-                width="1"
-                height="50"
-                viewBox="0 0 1 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="1" height="50" fill="#C4C4C4" />
+            <button type="button" class="btn-quantity" id="decrease">
+              <svg width="34" height="34">
+                <use href="../assets/icons/sprite.svg#icon-order-minus"></use>
               </svg>
             </button>
-            <span class="quantity basic-font-bk" id="quantity">1</span>
-            <button class="btn-quantity" id="increase">
-              <svg
-                width="1"
-                height="50"
-                viewBox="0 0 1 50"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="1" height="50" fill="#C4C4C4" />
-              </svg>
-
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 9.5H20" stroke="#C4C4C4" stroke-width="2" />
-                <path d="M10 20L10 0" stroke="#C4C4C4" stroke-width="2" />
+            <div class="quantity-value">
+              <p class="quantity basic-font-bk" id="quantity">1</p>
+            </div>
+            <button type="button" class="btn-quantity" id="increase">              
+              <svg width="34" height="34">
+                <use href="../assets/icons/sprite.svg#icon-order-plus"></use>
               </svg>
             </button>
           </div>
@@ -103,11 +73,34 @@
       <!---/////product menu/////-->
       <!-------------------------------------------------->
       <div class="product-menu">
-        <button class="btn-menu basic-font menu-active">상품정보</button>
-        <button class="btn-menu basic-font">리뷰</button>
-        <button class="btn-menu basic-font">Q&A</button>
-        <button class="btn-menu basic-font">반품/교환정보</button>
+        <button type="button" class="btn-menu basic-font menu-active">상품정보</button>
+        <button type="button" class="btn-menu basic-font">리뷰</button>
+        <button type="button" class="btn-menu basic-font">Q&A</button>
+        <button type="button" class="btn-menu basic-font">반품/교환정보</button>
       </div>
     </main>
+    <!-------------------------------------------------->
+    <!---/////modal/////-->
+    <!-------------------------------------------------->
+    <div class="modal hidden" id="modal-login">
+      <div class="modal-container">
+        <button type="button" class="close-btn">
+          <svg width="24" height="24">
+            <use href="../assets/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-dialog">
+          로그인이 필요한 서비스입니다.
+          <span>로그인 하시겠습니까?</span>
+        </p>
+        <div class="modal-buttons">
+          <button type="button" class="btn-modal basic-font" id="btn-no">
+            아니오
+          </button>
+          <button type="button" class="btn-modal basic-font-wh" id="btn-yes">
+            예
+          </button>
+      </div>
+    </div>
   </body>
 </html>
