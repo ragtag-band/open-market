@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../styles/base/typography.css" />
     <link rel="stylesheet" href="../styles/base/variables.css" />
 
+    <!-- 메인페이지 CSS 연결 -->
+    <link rel="stylesheet" href="../styles/pages/index.css" />
     <!-- 헤더 CSS 연결 -->
     <link rel="stylesheet" href="../styles/components/header.css" />
   </head>
@@ -19,9 +21,61 @@
     <header id="header"></header>
 
     <!-- 메인페이지 -->
-    <main>...</main>
+    <main>
+      <!-- 배너 슬라이더 -->
+      <section id="banner-slider" class="banner" aria-label="홍보 배너">
+        <div class="banner-inner">
+          <!-- 실제로 슬라이드가 움직이는 레일 -->
+          <div class="banner-viewport">
+            <div class="banner-track" id="bannerTrack">
+              <!-- 배너 이미지 -->
+              <a class="banner-slide" href="#" aria-label="배너 1">
+                <img src="../assets/images/hongboimg1.jpg" alt="홍보 배너 1" />
+              </a>
+
+              <a class="banner-slide" href="#" aria-label="배너 2">
+                <img src="../assets/images/hongboimg2.jpg" alt="홍보 배너 2" />
+              </a>
+
+              <a class="banner-slide" href="#" aria-label="배너 3">
+                <img src="../assets/images/hongboimg3.jpg" alt="홍보 배너 3" />
+              </a>
+            </div>
+          </div>
+
+          <!-- 좌/우 버튼 -->
+          <button
+            class="banner-arrow left"
+            id="bannerPrev"
+            type="button"
+            aria-label="이전 배너"
+          >
+            ‹
+          </button>
+          <button
+            class="banner-arrow right"
+            id="bannerNext"
+            type="button"
+            aria-label="다음 배너"
+          >
+            ›
+          </button>
+
+          <!-- dots (아래 동그라미 표시) -->
+          <div
+            class="banner-dots"
+            id="bannerDots"
+            aria-label="배너 페이지 표시"
+          ></div>
+        </div>
+      </section>
+    </main>
 
     <!-- 헤더 JS 연결 -->
     <script type="module" src="../js/common/header.js"></script>
+    <!-- 푸터 JS 연결 -->
+    <script type="module" src="../js/common/footer.js"></script>
+    <!-- 배너 JS 연결 -->
+    <script type="module" src="../js/banner.js"></script>
   </body>
 </html>
