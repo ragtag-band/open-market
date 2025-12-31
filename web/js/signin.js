@@ -1,6 +1,7 @@
 // 로그인
 
 import { signin } from "./common/auth.js";
+import { STORAGE_KEYS } from "./common/config.js";
 
 const signinForm = document.getElementById("signin-form");
 
@@ -14,9 +15,9 @@ signinForm.addEventListener("submit", async (event) => {
  try {
     const data = await signin({ username, password });
 
-    localStorage.setItem("access_token", data.access);
-    localStorage.setItem("refresh_token", data.refresh);
-    localStorage.setItem("user", JSON.stringify(data.user));
+    localStorage.setItem(STORAGE_KEYS.ACCESS, data.access);
+    localStorage.setItem(STORAGE_KEYS.REFRESH, data.refresh);
+    localStorage.setItem(STORAGE_KEYS.USER_ID, JSON.stringify(data.user));
 
     alert("로그인 성공");
     window.location.href = "/html/signup.html";

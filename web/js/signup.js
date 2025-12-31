@@ -12,3 +12,4 @@ logoutButton.addEventListener("click", () => {
 
   window.location.href = "/html/signin.html";
 });
+
