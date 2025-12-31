@@ -4,6 +4,9 @@
   --black-color: #000000;
   --green-color: #21bf48; /* 구매 버튼 색상, 총 금액 색상 */
   --white-color: #ffffff;
+  /* etc */
+  --border-line-gray: #c4c4c4;
+  --border-line-light-gray: #e0e0e0;
 }
 
 html {
@@ -14,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: white;
 }
 /* ------------------------------------*/
 /*             font style              */
@@ -66,21 +69,38 @@ body {
 .product-details {
   margin-top: 3rem;
 }
-.quantity-select {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
+.deliver {
+  margin-bottom: 1rem;
+  border-bottom: var(--border-line-gray) 2px solid;
 }
+/* -----------/ quantity selector /-----------*/
+.quantity-select {
+  width: 10.3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 2rem;
+  border: var(--border-line-gray) 2px solid;
+}
+
 .btn-quantity {
+  padding: 0 1rem 0 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
 }
+/* -----------/ total : quantity and price /-----------*/
 .total {
   margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: var(--border-line-gray) 2px solid;
 }
 .total-quantity-price {
   display: flex;
@@ -94,6 +114,7 @@ body {
   flex-direction: row;
   gap: 2rem;
 }
+/* ----------/ button: buy and cart /---------------*/
 .btn-buy {
   width: 14rem;
   background-color: var(--green-color);
@@ -116,12 +137,15 @@ body {
 .product-menu {
   margin-top: 4rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 .btn-menu {
+  width: 10rem;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.7rem 2rem;
+  border-bottom: var(--border-line-light-gray) 6px solid;
 }

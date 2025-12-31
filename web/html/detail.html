@@ -29,7 +29,9 @@
         <!---/////product details/////-->
         <!-------------------------------------------------->
         <div class="product-details">
-          <p class="basic-font">택배배송 / 무료배송</p>
+          <div class="deliver">
+            <p class="basic-font">택배배송 / 무료배송</p>
+          </div>
           <!-----------------/ quantity select /------------------->
           <div class="quantity-select">
             <button class="btn-quantity" id="decrease">
@@ -42,9 +44,28 @@
               >
                 <path d="M0 10H20" stroke="#C4C4C4" stroke-width="2" />
               </svg>
+              <svg
+                width="1"
+                height="50"
+                viewBox="0 0 1 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="1" height="50" fill="#C4C4C4" />
+              </svg>
             </button>
             <span class="quantity basic-font-bk" id="quantity">1</span>
             <button class="btn-quantity" id="increase">
+              <svg
+                width="1"
+                height="50"
+                viewBox="0 0 1 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="1" height="50" fill="#C4C4C4" />
+              </svg>
+
               <svg
                 width="20"
                 height="20"
@@ -82,10 +103,10 @@
       <!---/////product menu/////-->
       <!-------------------------------------------------->
       <div class="product-menu">
-        <button class="btn-menu basic-font-bk menu-active">상품정보</button>
-        <button class="btn-menu basic-font-bk">리뷰</button>
-        <button class="btn-menu basic-font-bk">Q&A</button>
-        <button class="btn-menu basic-font-bk">반품/교환정보</button>
+        <button class="btn-menu basic-font menu-active">상품정보</button>
+        <button class="btn-menu basic-font">리뷰</button>
+        <button class="btn-menu basic-font">Q&A</button>
+        <button class="btn-menu basic-font">반품/교환정보</button>
       </div>
     </main>
   </body>
