@@ -17,7 +17,7 @@ signinForm.addEventListener("submit", async (event) => {
 
     localStorage.setItem(STORAGE_KEYS.ACCESS, data.access);
     localStorage.setItem(STORAGE_KEYS.REFRESH, data.refresh);
-    localStorage.setItem(STORAGE_KEYS.USER_ID, JSON.stringify(data.user));
+    localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data.user));
 
     alert("로그인 성공");
     window.location.href = "/html/signup.html";
