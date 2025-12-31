@@ -1,3 +1,11 @@
+:root {
+  /* font color */
+  --gray-color: #767676; /* 기본 글자 색상, 장바구니 버튼 색상 */
+  --black-color: #000000;
+  --green-color: #21bf48; /* 구매 버튼 색상, 총 금액 색상 */
+  --white-color: #ffffff;
+}
+
 html {
   font-size: 16px;
 }
@@ -13,11 +21,11 @@ body {
 /* ------------------------------------*/
 .basic-font {
   font-size: 1rem;
-  color: #767676;
+  color: var(--gray-color);
 }
 .basic-font-bk {
   font-size: 1rem;
-  color: #000000;
+  color: var(--black-color);
   font-weight: normal;
 }
 .product-title {
@@ -25,15 +33,95 @@ body {
   margin: 0;
 }
 .product-price {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.basic-font-wh {
+  font-size: 1rem;
+  color: var(--white-color);
+  font-weight: normal;
+}
+.basic-font-gn {
+  font-size: 1rem;
+  color: var(--green-color);
+  font-weight: bold;
+}
+.total-price-gn {
+  font-size: 2rem;
+  color: var(--green-color);
   font-weight: bold;
 }
 /* ------------------------------------*/
-/*          page layout style         */
+/*          page layout style          */
 /* ------------------------------------*/
 .product-container {
   padding: 5rem;
 }
 .product-info {
   margin-top: 2rem;
+}
+/* ------------------------------------*/
+/*          product details       */
+/* ------------------------------------*/
+.product-details {
+  margin-top: 3rem;
+}
+.quantity-select {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.btn-quantity {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.total {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total-quantity-price {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: row;
+  gap: 1rem;
+}
+.button-buy-and-cart {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.btn-buy {
+  width: 14rem;
+  background-color: var(--green-color);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.btn-cart {
+  background-color: var(--gray-color);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+/* ------------------------------------*/
+/*          product menu       */
+/* ------------------------------------*/
+.product-menu {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
 }

@@ -30,34 +30,62 @@
         <!-------------------------------------------------->
         <div class="product-details">
           <p class="basic-font">택배배송 / 무료배송</p>
+          <!-----------------/ quantity select /------------------->
           <div class="quantity-select">
-            <button class="btn-quantity"></button>
+            <button class="btn-quantity" id="decrease">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 10H20" stroke="#C4C4C4" stroke-width="2" />
+              </svg>
+            </button>
+            <span class="quantity basic-font-bk" id="quantity">1</span>
+            <button class="btn-quantity" id="increase">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 9.5H20" stroke="#C4C4C4" stroke-width="2" />
+                <path d="M10 20L10 0" stroke="#C4C4C4" stroke-width="2" />
+              </svg>
+            </button>
           </div>
+          <!-----------------/ total quantity and price /----------------->
           <div class="total">
-            <p class="basic-font">총 상품 금액</p>
-            <div class="total-quatity-price">
+            <p class="basic-font-bk">총 상품 금액</p>
+            <div class="total-quantity-price">
               <p class="basic-font">
-                총 수량 <span class="basic-font-gr">1</span>개 |
+                총 수량 <span class="basic-font-gn">1</span>개
+                <span class="basic-font">|</span>
               </p>
-              <p class="total-price-gr">
+              <p class="total-price-gn" id="total-price">
                 17,500
-                <span class="basic-font-gr">원</span>
+                <span class="basic-font-gn">원</span>
               </p>
             </div>
           </div>
-          <button class="btn-buy basic-font-wh">바로 구매</button>
-          <button class="btn-cart basic-font-wh">장바구니</button>
+          <!------------------/ button : buy and cart /----------------->
+          <div class="button-buy-and-cart">
+            <button class="btn-buy basic-font-wh">바로 구매</button>
+            <button class="btn-cart basic-font-wh">장바구니</button>
+          </div>
         </div>
-        <!-------------------------------------------------->
-        <!---/////product menu/////-->
-        <!-------------------------------------------------->
-        <div class="product-menu">
-          <button class="btn-menu basic-font-bk menu-active">
-            상품정보
-          </button>
-          <button class="btn-menu basic-font-bk">리뷰</button>
-          <button class="btn-menu basic-font-bk">Q&A</button>
-          <button class="btn-menu basic-font-bk">반품/교환정보</button>
+      </div>
+      <!-------------------------------------------------->
+      <!---/////product menu/////-->
+      <!-------------------------------------------------->
+      <div class="product-menu">
+        <button class="btn-menu basic-font-bk menu-active">상품정보</button>
+        <button class="btn-menu basic-font-bk">리뷰</button>
+        <button class="btn-menu basic-font-bk">Q&A</button>
+        <button class="btn-menu basic-font-bk">반품/교환정보</button>
       </div>
     </main>
   </body>
