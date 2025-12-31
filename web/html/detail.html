@@ -6,6 +6,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>product-details</title>
+    <link rel="stylesheet" href="../styles/pages/detail.css" />
   </head>
-  <body></body>
+  <body>
+    <main class="product-container">
+      <!-------------------------------------------------->
+      <!---/////product image/////-->
+      <!-------------------------------------------------->
+      <div class="product-img">
+        <img src="../assets/images/product3.png" alt="무릎담요-제품-소개-1" />
+      </div>
+      <!-------------------------------------------------->
+      <!---/////product info/////-->
+      <!-------------------------------------------------->
+      <div class="product-info">
+        <p class="basic-font">백엔드 글로벌</p>
+        <p class="product-title">딥러닝 개발자 무릎 담요</p>
+        <p class="product-price">
+          17,500 <span class="basic-font-bk">원</span>
+        </p>
+        <!-------------------------------------------------->
+        <!---/////product details/////-->
+        <!-------------------------------------------------->
+        <div class="product-details">
+          <p class="basic-font">택배배송 / 무료배송</p>
+          <div class="quantity-select">
+            <button class="btn-quantity"></button>
+          </div>
+          <div class="total">
+            <p class="basic-font">총 상품 금액</p>
+            <div class="total-quatity-price">
+              <p class="basic-font">
+                총 수량 <span class="basic-font-gr">1</span>개 |
+              </p>
+              <p class="total-price-gr">
+                17,500
+                <span class="basic-font-gr">원</span>
+              </p>
+            </div>
+          </div>
+          <button class="btn-buy basic-font-wh">바로 구매</button>
+          <button class="btn-cart basic-font-wh">장바구니</button>
+        </div>
+        <!-------------------------------------------------->
+        <!---/////product menu/////-->
+        <!-------------------------------------------------->
+        <div class="product-menu">
+          <button class="btn-menu basic-font-bk menu-active">
+            상품정보
+          </button>
+          <button class="btn-menu basic-font-bk">리뷰</button>
+          <button class="btn-menu basic-font-bk">Q&A</button>
+          <button class="btn-menu basic-font-bk">반품/교환정보</button>
+      </div>
+    </main>
+  </body>
 </html>

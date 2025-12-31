@@ -1,0 +1,39 @@
+html {
+  font-size: 16px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+/* ------------------------------------*/
+/*             font style              */
+/* ------------------------------------*/
+.basic-font {
+  font-size: 1rem;
+  color: #767676;
+}
+.basic-font-bk {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: normal;
+}
+.product-title {
+  font-size: 2rem;
+  margin: 0;
+}
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* ------------------------------------*/
+/*          page layout style         */
+/* ------------------------------------*/
+.product-container {
+  padding: 5rem;
+}
+.product-info {
+  margin-top: 2rem;
+}
