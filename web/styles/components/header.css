@@ -42,7 +42,8 @@
 .header__search {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 72rem;
+  flex: 0 0 52rem;
+  max-width: 56rem;
   height: 4.4rem;
   display: flex;
   align-items: center;
@@ -72,10 +73,8 @@
   flex: 0 0 auto;
   width: 3.6rem;
   height: 3.6rem;
-
   display: grid;
   place-items: center;
-
   color: var(--brand);
   background: transparent;
   border: 0;
@@ -96,7 +95,7 @@
   display: flex;
   align-items: center;
   gap: 3.6rem;
-  margin-left: 2rem; /* 검색바와 간격 */
+  margin-left: auto; /* 검색바와의 간격 */
 }
 
 .header__menu-item {
@@ -141,6 +140,8 @@
 
   .header__search {
     height: 3.6rem;
+    flex: 1 1 auto;
+    max-width: none;
     padding: 0 0.8rem 0 1.2rem;
     border-width: 0.18rem;
   }
@@ -161,7 +162,7 @@
 
   .header__menu {
     gap: 1.4rem;
-    margin-left: 0.8rem;
+    margin-left: auto;
   }
 
   .header__menu-item .icon {
