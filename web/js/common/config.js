@@ -9,5 +9,5 @@
   export const STORAGE_KEYS = {
     ACCESS : "access_token",
     REFRESH : "refresh_token",
-    USER_ID : "user",
+    USER : "user",
   };
