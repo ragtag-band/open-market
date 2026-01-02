@@ -1,1 +1,85 @@
 /* 푸터 스타일 */
+
+.footer {
+  background: #f9f9f9;
+  padding: 32px 0 48px;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-top {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 링크 목록 */
+.footer-links {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-links a strong {
+  color: #111;
+}
+
+/* SNS 아이콘 */
+.footer-sns {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-sns a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* 구분선 */
+.footer-line {
+  width: min(1200px, 92vw);
+  margin: 20px auto;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* 하단 회사 정보 */
+.footer-bottom {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer-company {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

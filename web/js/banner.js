@@ -1,10 +1,10 @@
 // 배너 슬라이더
 
 // 요소 가져오기
-const track = document.getElementById("bannerTrack");
-const prevBtn = document.getElementById("bannerPrev");
-const nextBtn = document.getElementById("bannerNext");
-const dotsWrap = document.getElementById("bannerDots");
+const track = document.getElementById("bannerTrack"); // 사진 3장이 들어있는 긴 사진 줄
+const prevBtn = document.getElementById("bannerPrev"); // < 버튼
+const nextBtn = document.getElementById("bannerNext"); // > 버튼
+const dotsWrap = document.getElementById("bannerDots"); // 밑에 동그라미 점 들어갈 통
 
 // 혹시 HTML에 배너가 없으면(다른 페이지 재사용 등) 에러 방지
 if (track && prevBtn && nextBtn && dotsWrap) {
