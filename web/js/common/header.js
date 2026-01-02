@@ -12,9 +12,14 @@
 // 3. 스타일시트 추가
 // 3. <link rel="stylesheet" href="../styles/components/header.css" /> 를 head 태그 영역에 추가
 
+// header id를 가진 요소를 찾는다
+const header = document.getElementById("header");
+
+// 제대로 된 sticky 적용을 위해 header 요소 자체에 header 클래스 추가
+header.classList.add("header");
+
 //공통 컴포넌트를 넣을 헤더 코드를 const 변수로 저장
 const headerHTML = `
-  <header class="header">
   <div class="header__inner">
     <!-- 로고 -->
     <h1 class="header__logo">
@@ -40,22 +45,18 @@ const headerHTML = `
 
     <!-- 메뉴 -->
     <nav class="header__menu" aria-label="사용자 메뉴">
-      <a
-        class="header__menu-item"
-        href="장바구니 버튼을 누르면 이동할 페이지 주소 삽입"
-        aria-label="장바구니"
-      >
+      <a class="header__menu-item" 
+      href="장바구니 버튼을 누르면 이동할 페이지 링크" 
+      aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-cart"></use>
         </svg>
         <span class="header__menu-text">장바구니</span>
       </a>
 
-      <a
-        class="header__menu-item"
-        href="마이페이지 버튼을 누르면 이동할 페이지 주소 삽입"
-        aria-label="마이페이지"
-      >
+      <a class="header__menu-item" 
+      href="마이페이지 버튼을 누르면 이동할 페이지 링크" 
+      aria-label="마이페이지">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-user"></use>
         </svg>
@@ -63,11 +64,7 @@ const headerHTML = `
       </a>
     </nav>
   </div>
-</header>
 `;
 
-// header id를 가진 요소를 찾는다
-const header = document.getElementById("header");
-
-// header라는 자리 안에 HTML 코드를 넣는다
+// 위에 작성한 코드를 header라는 자리 안에 넣는다
 header.innerHTML = headerHTML;

@@ -2,6 +2,13 @@
 
 //공통 컴포넌트 푸터 사용법
 
+// 1. js 스크립트 추가
+// <script type="module" src="../js/common/footer.js"></script> 을
+// body 태그 아래에 스크립트로 추가(defer을 사용해서 위에 작성해도 OK)
+
+// 2. 스타일시트 추가
+// <link rel="stylesheet" href="../styles/components/footer.css" /> 를 head 태그 영역에 추가
+
 const footer = document.createElement("footer");
 footer.className = "footer";
 
