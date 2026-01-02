@@ -3,7 +3,7 @@
 //공통 컴포넌트 헤더 사용법
 
 //1. 헤더 위치 설정
-// index.html 등에서 헤더를 사용하고 싶은 위치에 <header id="header"></header> 태그를 추가
+// 헤더를 추가할 위치에 <header id="header"></header> 태그를 추가
 
 // 2. js 스크립트 추가
 // <script type="module" src="../js/common/header.js"></script> 을
@@ -46,7 +46,7 @@ const headerHTML = `
     <!-- 메뉴 -->
     <nav class="header__menu" aria-label="사용자 메뉴">
       <a class="header__menu-item" 
-      href="장바구니 버튼을 누르면 이동할 페이지 링크" 
+      href="../html/cart.html" 
       aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-cart"></use>
@@ -55,7 +55,7 @@ const headerHTML = `
       </a>
 
       <a class="header__menu-item" 
-      href="마이페이지 버튼을 누르면 이동할 페이지 링크" 
+      href="마이페이지를 누르면 이동할 페이지" 
       aria-label="마이페이지">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-user"></use>
@@ -72,7 +72,7 @@ header.innerHTML = headerHTML;
 // =======================
 // 검색 기능 (공통 헤더)
 // - 다른 페이지에서 검색해도 index.html로 이동
-// - index에서 URL의 search를 읽어 카드 필터링
+// - index.js가 URL의 search를 읽어 API로 다시 불러옴
 // =======================
 
 const form = header.querySelector(".header__search");
@@ -97,61 +97,7 @@ if (form && input) {
     // 검색 시 페이지는 1로 초기화
     url.searchParams.set("page", "1");
 
+    // 페이지 이동
     window.location.href = url.toString();
   });
-}
-
-// 메인(index)에서만 자동으로 카드 필터링 실행
-const grid = document.querySelector(".products__grid");
-if (grid) {
-  const params = new URLSearchParams(window.location.search);
-  const keyword = (params.get("search") || "").trim().toLowerCase();
-
-  filterProductCards(keyword);
-}
-
-// 카드 필터 함수
-function filterProductCards(keyword) {
-  const grid = document.querySelector(".products__grid");
-  if (!grid) return;
-
-  // 카드 선택자
-  const cards = document.querySelectorAll(".product-card, .card");
-  if (!cards.length) return;
-
-  let visibleCount = 0;
-
-  cards.forEach((card) => {
-    const nameEl = card.querySelector(".product-name, .name");
-    const sellerEl = card.querySelector(".product-seller, .seller");
-
-    const name = (nameEl?.textContent || "").trim().toLowerCase();
-    const seller = (sellerEl?.textContent || "").trim().toLowerCase();
-
-    const matched =
-      keyword === "" || name.includes(keyword) || seller.includes(keyword);
-
-    card.style.display = matched ? "" : "none";
-    if (matched) visibleCount++;
-  });
-
-  toggleEmptyMessage(grid, visibleCount);
-}
-
-function toggleEmptyMessage(grid, visibleCount) {
-  let msg = document.getElementById("searchEmptyMsg");
-
-  if (visibleCount === 0) {
-    if (!msg) {
-      msg = document.createElement("p");
-      msg.id = "searchEmptyMsg";
-      msg.textContent = "검색 결과가 없습니다.";
-      msg.style.gridColumn = "1 / -1";
-      msg.style.padding = "24px 0";
-      msg.style.color = "#666";
-      grid.appendChild(msg);
-    }
-  } else {
-    if (msg) msg.remove();
-  }
 }
