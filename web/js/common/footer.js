@@ -13,8 +13,10 @@
 
 // 푸터 요소 생성(푸터 태그 생성)
 const footer = document.createElement("footer");
+
 // CSS 스타일을 적용하기 위해 footer 클래스를 추가
 footer.className = "footer";
+
 // JS로 앞에 만들어둔 푸터 요소에 아래에 HTML 코드를 삽입
 footer.innerHTML = `
   <div class="footer-top">

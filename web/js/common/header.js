@@ -3,7 +3,7 @@
 //공통 컴포넌트 헤더 사용법
 
 //1. 헤더 위치 설정
-// index.html 등에서 헤더를 사용하고 싶은 위치에 <header id="header"></header> 태그를 추가
+// 헤더를 추가할 위치에 <header id="header"></header> 태그를 추가
 
 // 2. js 스크립트 추가
 // <script type="module" src="../js/common/header.js"></script> 을
@@ -46,7 +46,7 @@ const headerHTML = `
     <!-- 메뉴 -->
     <nav class="header__menu" aria-label="사용자 메뉴">
       <a class="header__menu-item" 
-      href="장바구니 버튼을 누르면 이동할 페이지 링크" 
+      href="../html/cart.html" 
       aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-cart"></use>
@@ -55,7 +55,7 @@ const headerHTML = `
       </a>
 
       <a class="header__menu-item" 
-      href="마이페이지 버튼을 누르면 이동할 페이지 링크" 
+      href="마이페이지를 누르면 이동할 페이지" 
       aria-label="마이페이지">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-user"></use>
@@ -68,3 +68,36 @@ const headerHTML = `
 
 // 위에 작성한 코드를 header라는 자리 안에 넣는다
 header.innerHTML = headerHTML;
+
+// =======================
+// 검색 기능 (공통 헤더)
+// - 다른 페이지에서 검색해도 index.html로 이동
+// - index.js가 URL의 search를 읽어 API로 다시 불러옴
+// =======================
+
+const form = header.querySelector(".header__search");
+const input = header.querySelector(".header__search-input");
+
+// URL에 search가 있으면(메인에서 검색 후 새로고침/뒤로가기) input에 유지
+const params = new URLSearchParams(window.location.search);
+const currentKeyword = params.get("search") ?? "";
+if (input) input.value = currentKeyword;
+
+if (form && input) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const keyword = input.value.trim();
+
+    // 다른 페이지에서 검색해도 index로 이동하면서 search 전달
+    const url = new URL("./index.html", window.location.href);
+    if (keyword) url.searchParams.set("search", keyword);
+    else url.searchParams.delete("search");
+
+    // 검색 시 페이지는 1로 초기화
+    url.searchParams.set("page", "1");
+
+    // 페이지 이동
+    window.location.href = url.toString();
+  });
+}
