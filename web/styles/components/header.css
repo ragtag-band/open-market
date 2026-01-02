@@ -126,7 +126,7 @@
   color: var(--brand);
 }
 
-/* 모바일 */
+/* 미디어 쿼리 */
 @media (max-width: 48rem) {
   .header__inner {
     height: 7.6rem;

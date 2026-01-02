@@ -92,7 +92,7 @@
   background: rgba(0, 0, 0, 0.85);
 }
 
-/* 모바일 */
+/* 미디어 쿼리 */
 @media (max-width: 768px) {
   .banner-viewport {
     height: 220px;
@@ -104,9 +104,7 @@
   }
 }
 
-/* =========================
-   상품 목록
-   ========================= */
+/* 상품 목록 */
 
 .products {
   width: min(1200px, 92vw);
@@ -174,7 +172,7 @@
   color: #111;
 }
 
-/* 모바일 */
+/* 미디어 쿼리(PC는 3열, 태블릿은 2열, 모바일은 1열로 나열됌) */
 @media (max-width: 768px) {
   .products__grid {
     grid-template-columns: repeat(2, 1fr);
