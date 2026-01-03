@@ -183,14 +183,11 @@ body {
   display: none;
 }
 .modal-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
   border: var(--border-line-gray) 1px solid;
   padding: 2rem;
   width: 18rem;
+  background-color: var(--white-color);
 }
 .modal-dialog {
   display: flex;
@@ -198,9 +195,34 @@ body {
   justify-content: center;
   align-items: center;
 }
+.modal-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
 .close-btn {
   display: flex;
-  align-items: right;
   justify-content: right;
+}
+.close-btn svg {
   border: none;
+  background-color: var(--white-color);
+  cursor: pointer;
+  color: var(--gray-color);
+}
+.btn-no {
+  background-color: var(--white-color);
+  border: var(--border-line-gray) 1px solid;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
+}
+.btn-yes {
+  background-color: var(--green-color);
+  border: var(--green-color) 1px solid;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
 }

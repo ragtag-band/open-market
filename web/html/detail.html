@@ -42,7 +42,7 @@
             <div class="quantity-value">
               <p class="quantity basic-font-bk" id="quantity">1</p>
             </div>
-            <button type="button" class="btn-quantity" id="increase">              
+            <button type="button" class="btn-quantity" id="increase">
               <svg width="34" height="34">
                 <use href="../assets/icons/sprite.svg#icon-order-plus"></use>
               </svg>
@@ -64,8 +64,12 @@
           </div>
           <!------------------/ button : buy and cart /----------------->
           <div class="button-buy-and-cart">
-            <button class="btn-buy basic-font-wh">바로 구매</button>
-            <button class="btn-cart basic-font-wh">장바구니</button>
+            <button class="btn-buy basic-font-wh" id="btn-buy">
+              바로 구매
+            </button>
+            <button class="btn-cart basic-font-wh" id="btn-cart">
+              장바구니
+            </button>
           </div>
         </div>
       </div>
@@ -73,7 +77,9 @@
       <!---/////product menu/////-->
       <!-------------------------------------------------->
       <div class="product-menu">
-        <button type="button" class="btn-menu basic-font menu-active">상품정보</button>
+        <button type="button" class="btn-menu basic-font menu-active">
+          상품정보
+        </button>
         <button type="button" class="btn-menu basic-font">리뷰</button>
         <button type="button" class="btn-menu basic-font">Q&A</button>
         <button type="button" class="btn-menu basic-font">반품/교환정보</button>
@@ -84,23 +90,25 @@
     <!-------------------------------------------------->
     <div class="modal hidden" id="modal-login">
       <div class="modal-container">
-        <button type="button" class="close-btn">
+        <div class="close-btn" id="close-btn">
           <svg width="24" height="24">
             <use href="../assets/icons/sprite.svg#icon-close"></use>
           </svg>
-        </button>
+        </div>
         <p class="modal-dialog">
           로그인이 필요한 서비스입니다.
           <span>로그인 하시겠습니까?</span>
         </p>
         <div class="modal-buttons">
-          <button type="button" class="btn-modal basic-font" id="btn-no">
+          <button type="button" class="btn-no basic-font" id="btn-no">
             아니오
           </button>
-          <button type="button" class="btn-modal basic-font-wh" id="btn-yes">
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes">
             예
           </button>
+        </div>
       </div>
     </div>
+    <script src="../js/detail.js"></script>
   </body>
 </html>
