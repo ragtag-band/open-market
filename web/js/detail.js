@@ -1,22 +1,25 @@
 // 상품 상세
-
-// 모달 관련 스크립트
-const modal = document.getElementById("modal-login");
-const openModal = document.getElementById("btn-cart");
-const closeModal = [
+/**----------------------------------------------------
+ * 로그인 모달 관련 스크립트
+ * 구매하기 버튼 클릭 시 모달 오픈
+ */
+const modalLogin = document.getElementById("modal-login");
+const openModalLogin = document.getElementById("btn-buy");
+const closeModalLogin = [
   document.getElementById("close-btn"),
   document.getElementById("btn-no"),
 ];
 
-// 장바구니에 상품 추가 모달 열기
-openModal.addEventListener("click", function (event) {
+//로그인 모달 열기
+openModalLogin.addEventListener("click", function (event) {
   event.preventDefault();
-  modal.classList.remove("hidden");
+  modalLogin.classList.remove("hidden-login");
 });
-// 모달 닫기
-closeModal.forEach((btn) => {
+
+// 로그인 모달 닫기
+closeModalLogin.forEach((btn) => {
   btn.addEventListener("click", function (event) {
     event.preventDefault();
-    modal.classList.add("hidden");
+    modalLogin.classList.add("hidden-login");
   });
 });

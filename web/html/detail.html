@@ -90,7 +90,7 @@
     <!-------------------------------------------------->
     <!---/////modal/////-->
     <!-------------------------------------------------->
-    <div class="modal hidden" id="modal-login">
+    <div class="modal hidden-login" id="modal-login">
       <div class="modal-container">
         <div class="close-btn" id="close-btn">
           <svg width="24" height="24">
@@ -106,6 +106,50 @@
             아니오
           </button>
           <button type="button" class="btn-yes basic-font-wh" id="btn-yes">
+            예
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-----------/ modal : first click to cart page /----------->
+    <div class="modal hidden-cart-st" id="modal-cart-st">
+      <div class="modal-container">
+        <div class="close-btn" id="close-cart-btn">
+          <svg width="24" height="24">
+            <use href="../assets/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </div>
+        <p class="modal-dialog">
+          상품을 장바구니에 담았습니다 :)
+          <span>장바구니로 이동하시겠습니까?</span>
+        </p>
+        <div class="modal-buttons">
+          <button type="button" class="btn-no basic-font" id="btn-no-cart">
+            아니오
+          </button>
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
+            예
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-----------/ modal : second click to cart page /----------->
+    <div class="modal hidden-cart-nd" id="modal-cart-nd">
+      <div class="modal-container">
+        <div class="close-btn" id="close-cart-btn">
+          <svg width="24" height="24">
+            <use href="../assets/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </div>
+        <p class="modal-dialog">
+          이미 장바구니에 있는 상품입니다.
+          <span>장바구니로 이동하시겠습니까?</span>
+        </p>
+        <div class="modal-buttons">
+          <button type="button" class="btn-no basic-font" id="btn-no-cart">
+            아니오
+          </button>
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
             예
           </button>
         </div>

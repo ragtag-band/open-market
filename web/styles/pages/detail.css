@@ -193,7 +193,7 @@ body {
   justify-content: center;
   z-index: 1000;
 }
-.hidden {
+.hidden-login {
   display: none;
 }
 .modal-container {
@@ -240,7 +240,13 @@ body {
   padding: 0.3rem 1.5rem;
   cursor: pointer;
 }
-
+/* -------/ modal : click to cart page /-------*/
+.hidden-cart-st {
+  display: none;
+}
+.hidden-cart-nd {
+  display: none;
+}
 @media (min-width: 890px) {
   .product {
     margin: 8rem 0 2rem 0;
