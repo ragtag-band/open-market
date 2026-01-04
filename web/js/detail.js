@@ -1,6 +1,6 @@
 // 상품 상세
 /**---------------------------------------------
- * 수량 조절 스크립트
+ * 수량 조절 버튼
  */
 const btnDecrease = document.getElementById("decrease");
 const btnIncrease = document.getElementById("increase");
@@ -31,8 +31,8 @@ btnIncrease.addEventListener("click", function () {
 });
 
 /**----------------------------------------------------
- * 로그인 모달 관련 스크립트
- * 바로 구매 버튼 클릭 시 모달 오픈
+ * 로그인 모달
+ * - 바로 구매 버튼 클릭 시 모달 오픈
  */
 const modalLogin = document.getElementById("modal-login");
 const openModalLogin = document.getElementById("btn-buy");
@@ -55,7 +55,7 @@ closeModalLogin.forEach((btn) => {
   });
 });
 /**----------------------------------------------------
- * 장바구니 모달 관련 스크립트
+ * 장바구니 모달
  * - 장바구니 버튼 클릭 시 모달 오픈
  * - 클릭 횟수에 따라 다른 모달 오픈
  */
@@ -95,7 +95,12 @@ closeModalCartNd.forEach((btn) => {
     modalCartNd.classList.add("hidden-cart-nd");
   });
 });
+/** ---------------------------------------------------
+ * 상품 메뉴 버튼
+ */
+
 /** TO DO ---------------------------------------------
  * 장바구니 페이지로 이동 -'예' 버튼 클릭 시 장바구니 페이지로 이동
  * 로그인 페이지로 이동 - '예' 버튼 클릭 시 로그인 페이지로 이동
+ * 코드 간소화 및 중복 제거 (querySelectorAll 등 활용)
  */
