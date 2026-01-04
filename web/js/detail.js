@@ -1,4 +1,35 @@
 // 상품 상세
+/**---------------------------------------------
+ * 수량 조절 스크립트
+ */
+const btnDecrease = document.getElementById("decrease");
+const btnIncrease = document.getElementById("increase");
+const quantityInput = document.getElementById("quantity");
+const totalQuantity = document.getElementById("total-quantity");
+const totalPrice = document.getElementById("total-price");
+
+const productPrice = 17500;
+let quantity = 1;
+
+// 수량에 따른 총 가격 및 총 수량 업데이트 함수
+function updateTotal() {
+  quantityInput.textContent = quantity;
+  totalQuantity.textContent = quantity;
+  totalPrice.textContent = (productPrice * quantity).toLocaleString();
+}
+// 수량 감소 버튼 클릭 시
+btnDecrease.addEventListener("click", function () {
+  if (quantity > 1) {
+    quantity--;
+    updateTotal();
+  }
+});
+// 수량 증가 버튼 클릭 시
+btnIncrease.addEventListener("click", function () {
+  quantity++;
+  updateTotal();
+});
+
 /**----------------------------------------------------
  * 로그인 모달 관련 스크립트
  * 바로 구매 버튼 클릭 시 모달 오픈
@@ -64,3 +95,7 @@ closeModalCartNd.forEach((btn) => {
     modalCartNd.classList.add("hidden-cart-nd");
   });
 });
+/** TO DO ---------------------------------------------
+ * 장바구니 페이지로 이동 -'예' 버튼 클릭 시 장바구니 페이지로 이동
+ * 로그인 페이지로 이동 - '예' 버튼 클릭 시 로그인 페이지로 이동
+ */
