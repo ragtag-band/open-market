@@ -14,6 +14,7 @@ html {
 }
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
@@ -65,7 +66,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 5rem 0 10rem 0;
+  margin: 4rem 0 10rem 0;
 }
 .product {
   gap: 2rem;
@@ -255,7 +256,7 @@ body {
 }
 @media (min-width: 890px) {
   .product {
-    margin: 8rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
