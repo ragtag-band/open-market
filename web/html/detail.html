@@ -10,62 +10,69 @@
   </head>
   <body>
     <main class="product-container">
-      <!-------------------------------------------------->
-      <!---/////product image/////-->
-      <!-------------------------------------------------->
-      <div class="product-img">
-        <img src="../assets/images/product3.png" alt="무릎담요-제품-소개-1" />
-      </div>
-      <!-------------------------------------------------->
-      <!---/////product info/////-->
-      <!-------------------------------------------------->
-      <div class="product-info">
-        <p class="basic-font">백엔드 글로벌</p>
-        <p class="product-title">딥러닝 개발자 무릎 담요</p>
-        <p class="product-price">
-          17,500 <span class="basic-font-bk">원</span>
-        </p>
+      <div class="product">
         <!-------------------------------------------------->
-        <!---/////product details/////-->
+        <!---/////product image/////-->
         <!-------------------------------------------------->
-        <div class="product-details">
-          <div class="deliver">
-            <p class="basic-font">택배배송 / 무료배송</p>
-          </div>
-          <!-----------------/ quantity select /------------------->
-          <div class="quantity-select">
-            <button type="button" class="btn-quantity" id="decrease">
-              <svg width="34" height="34">
-                <use href="../assets/icons/sprite.svg#icon-order-minus"></use>
-              </svg>
-            </button>
-            <div class="quantity-value">
-              <p class="quantity basic-font-bk" id="quantity">1</p>
+        <div class="product-img">
+          <img src="../assets/images/product3.png" alt="무릎담요-제품-소개-1" />
+        </div>
+        <!-------------------------------------------------->
+        <!---/////product info/////-->
+        <!-------------------------------------------------->
+        <div class="product-info">
+          <p class="basic-font">백엔드 글로벌</p>
+          <p class="product-title">딥러닝 개발자 무릎 담요</p>
+          <p class="product-price">
+            17,500 <span class="basic-font-bk">원</span>
+          </p>
+          <!-------------------------------------------------->
+          <!---/////product details/////-->
+          <!-------------------------------------------------->
+          <div class="product-details">
+            <div class="deliver">
+              <p class="basic-font">택배배송 / 무료배송</p>
             </div>
-            <button type="button" class="btn-quantity" id="increase">              
-              <svg width="34" height="34">
-                <use href="../assets/icons/sprite.svg#icon-order-plus"></use>
-              </svg>
-            </button>
-          </div>
-          <!-----------------/ total quantity and price /----------------->
-          <div class="total">
-            <p class="basic-font-bk">총 상품 금액</p>
-            <div class="total-quantity-price">
-              <p class="basic-font">
-                총 수량 <span class="basic-font-gn">1</span>개
-                <span class="basic-font">|</span>
-              </p>
-              <p class="total-price-gn" id="total-price">
-                17,500
-                <span class="basic-font-gn">원</span>
-              </p>
+            <!-----------------/ quantity select /------------------->
+            <div class="quantity-select">
+              <button type="button" class="btn-quantity" id="decrease">
+                <svg>
+                  <use href="../assets/icons/sprite.svg#icon-order-minus"></use>
+                </svg>
+              </button>
+              <div class="quantity-value">
+                <p class="quantity basic-font-bk" id="quantity">1</p>
+              </div>
+              <button type="button" class="btn-quantity" id="increase">
+                <svg>
+                  <use href="../assets/icons/sprite.svg#icon-order-plus"></use>
+                </svg>
+              </button>
             </div>
-          </div>
-          <!------------------/ button : buy and cart /----------------->
-          <div class="button-buy-and-cart">
-            <button class="btn-buy basic-font-wh">바로 구매</button>
-            <button class="btn-cart basic-font-wh">장바구니</button>
+            <!-----------------/ total quantity and price /----------------->
+            <div class="total">
+              <p class="basic-font-bk">총 상품 금액</p>
+              <div class="total-quantity-price">
+                <p class="basic-font">
+                  총 수량
+                  <span class="basic-font-gn" id="total-quantity">1</span>개
+                  <span class="basic-font">|</span>
+                </p>
+                <p>
+                  <span class="total-price-gn" id="total-price">17,500</span>
+                  <span class="basic-font-gn">원</span>
+                </p>
+              </div>
+            </div>
+            <!------------------/ button : buy and cart /----------------->
+            <div class="button-buy-and-cart">
+              <button class="btn-buy basic-font-wh" id="btn-buy">
+                바로 구매
+              </button>
+              <button class="btn-cart basic-font-wh" id="btn-cart">
+                장바구니
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -73,34 +80,96 @@
       <!---/////product menu/////-->
       <!-------------------------------------------------->
       <div class="product-menu">
-        <button type="button" class="btn-menu basic-font menu-active">상품정보</button>
+        <button type="button" class="btn-menu basic-font menu-active">
+          상품정보
+        </button>
         <button type="button" class="btn-menu basic-font">리뷰</button>
-        <button type="button" class="btn-menu basic-font">Q&A</button>
+        <button type="button" class="btn-menu basic-font">문의사항</button>
         <button type="button" class="btn-menu basic-font">반품/교환정보</button>
+      </div>
+      <div class="contents" id="contents">
+        <div class="content-section" id="description">
+          <p class="basic-font-bk">상품 정보입니다.</p>
+        </div>
+        <div class="content-section" id="review">
+          <p class="basic-font-bk">리뷰입니다.</p>
+        </div>
+        <div class="content-section" id="question">
+          <p class="basic-font-bk">문의사항입니다.</p>
+        </div>
+        <div class="content-section" id="exchange">
+          <p class="basic-font-bk">반품/교환정보입니다.</p>
+        </div>
       </div>
     </main>
     <!-------------------------------------------------->
     <!---/////modal/////-->
     <!-------------------------------------------------->
-    <div class="modal hidden" id="modal-login">
+    <div class="modal hidden-login" id="modal-login">
       <div class="modal-container">
-        <button type="button" class="close-btn">
+        <div class="close-btn" id="close-btn">
           <svg width="24" height="24">
             <use href="../assets/icons/sprite.svg#icon-close"></use>
           </svg>
-        </button>
+        </div>
         <p class="modal-dialog">
           로그인이 필요한 서비스입니다.
           <span>로그인 하시겠습니까?</span>
         </p>
         <div class="modal-buttons">
-          <button type="button" class="btn-modal basic-font" id="btn-no">
+          <button type="button" class="btn-no basic-font" id="btn-no">
             아니오
           </button>
-          <button type="button" class="btn-modal basic-font-wh" id="btn-yes">
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes">
             예
           </button>
+        </div>
       </div>
     </div>
+    <!-----------/ modal : first click to cart page /----------->
+    <div class="modal hidden-cart-st" id="modal-cart-st">
+      <div class="modal-container">
+        <div class="close-btn" id="close-cart-btn-st">
+          <svg width="24" height="24">
+            <use href="../assets/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </div>
+        <p class="modal-dialog">
+          장바구니 담기에 성공했습니다.🎉
+          <span>장바구니로 이동하시겠습니까?</span>
+        </p>
+        <div class="modal-buttons">
+          <button type="button" class="btn-no basic-font" id="btn-no-cart-st">
+            아니오
+          </button>
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
+            예
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-----------/ modal : second click to cart page /----------->
+    <div class="modal hidden-cart-nd" id="modal-cart-nd">
+      <div class="modal-container">
+        <div class="close-btn" id="close-cart-btn-nd">
+          <svg width="24" height="24">
+            <use href="../assets/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </div>
+        <p class="modal-dialog">
+          이미 장바구니에 있는 상품입니다.
+          <span>장바구니로 이동하시겠습니까?</span>
+        </p>
+        <div class="modal-buttons">
+          <button type="button" class="btn-no basic-font" id="btn-no-cart-nd">
+            아니오
+          </button>
+          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
+            예
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/detail.js"></script>
   </body>
 </html>
