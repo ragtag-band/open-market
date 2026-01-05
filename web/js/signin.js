@@ -15,18 +15,18 @@ signinForm.addEventListener("submit", async (event) => {
     const data = await signin({ username, password });
 
     alert("로그인 성공");
-    window.location.href = "/html/index-test.html";
+    window.location.href = "/html/index.html";
   } catch (err) {
     alert(err.message);
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  const accessToken = localStorage.getItem("access_token");
-  if (accessToken) {
-    // 이미 로그인된 상태면 메인 페이지로 리다이렉트
-    window.location.href = "/html/index-test.html";
-  }
-});
+// window.addEventListener("DOMContentLoaded", () => {
+//   const accessToken = localStorage.getItem("access_token");
+//   if (accessToken) {
+//     // 이미 로그인된 상태면 메인 페이지로 리다이렉트
+//     window.location.href = "/html/index-test.html";
+//   }
+// });
 
 
