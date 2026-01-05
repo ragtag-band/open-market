@@ -1,5 +1,3 @@
-// 헤더 관련 JavaScript 코드
-
 //공통 컴포넌트 헤더 사용법
 
 //1. 헤더 위치 설정
@@ -10,10 +8,38 @@
 // body 태그 아래에 스크립트로 추가(defer을 사용해서 위에 작성해도 OK)
 
 // 3. 스타일시트 추가
-// 3. <link rel="stylesheet" href="../styles/components/header.css" /> 를 head 태그 영역에 추가
+// <link rel="stylesheet" href="../styles/components/header.css" /> 를 head 태그 영역에 추가
 
 // header id를 가진 요소를 찾는다
 const header = document.getElementById("header");
+
+// 로그인 토큰 확인
+const accessToken = localStorage.getItem("access_token");
+
+// 로그인 여부에 따라 HTML이 들어갈 자리
+let authMenuHTML = "";
+
+if (accessToken) {
+  // 로그인 상태 → 마이페이지
+  authMenuHTML = `
+    <a class="header__menu-item" href="../html/mypage.html" aria-label="마이페이지">
+      <svg class="icon" aria-hidden="true">
+        <use href="../assets/icons/sprite.svg#icon-user"></use>
+      </svg>
+      <span class="header__menu-text">마이페이지</span>
+    </a>
+  `;
+} else {
+  // 비로그인 상태 → 로그인
+  authMenuHTML = `
+    <a class="header__menu-item" href="../html/signin.html" aria-label="로그인">
+      <svg class="icon" aria-hidden="true">
+        <use href="../assets/icons/sprite.svg#icon-user"></use>
+      </svg>
+      <span class="header__menu-text">로그인</span>
+    </a>
+  `;
+}
 
 // 제대로 된 sticky 적용을 위해 header 요소 자체에 header 클래스 추가
 header.classList.add("header");
@@ -45,22 +71,15 @@ const headerHTML = `
 
     <!-- 메뉴 -->
     <nav class="header__menu" aria-label="사용자 메뉴">
-      <a class="header__menu-item" 
-      href="../html/cart.html" 
-      aria-label="장바구니">
+      ${authMenuHTML}
+
+      <a class="header__menu-item"
+        href="../html/cart.html"
+        aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
           <use href="../assets/icons/sprite.svg#icon-cart"></use>
         </svg>
         <span class="header__menu-text">장바구니</span>
-      </a>
-
-      <a class="header__menu-item" 
-      href="마이페이지를 누르면 이동할 페이지" 
-      aria-label="마이페이지">
-        <svg class="icon" aria-hidden="true">
-          <use href="../assets/icons/sprite.svg#icon-user"></use>
-        </svg>
-        <span class="header__menu-text">마이페이지</span>
       </a>
     </nav>
   </div>
