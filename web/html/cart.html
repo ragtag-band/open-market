@@ -6,9 +6,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cart</title>
+    <!-- Base CSS 연결 -->
+    <link rel="stylesheet" href="../styles/base/reset.css" />
+    <link rel="stylesheet" href="../styles/base/typography.css" />
+    <link rel="stylesheet" href="../styles/base/variables.css" />
+    <!-- 헤더 CSS 연결 -->
+    <link rel="stylesheet" href="../styles/components/header.css" />
+    <!-- 장바구니 페이지 CSS 연결 -->
     <link rel="stylesheet" href="../styles/pages/cart.css" />
+    <!-- 푸터 CSS 연결 -->
+    <link rel="stylesheet" href="../styles/components/footer.css" />
   </head>
   <body>
+    <header id="header"></header>
+
     <main class="cart-page">
       <h2 class="cart-title">장바구니</h2>
       <div class="tab-title">
@@ -18,5 +29,11 @@
         <p class="item-price basic-font-bk">상품 금액</p>
       </div>
     </main>
+    <!-- 장바구니 JS 연결 -->
+    <script src="../js/cart.js"></script>
+    <!-- 헤더 JS 연결 -->
+    <script src="../js/common/header.js"></script>
+    <!-- 푸터 JS 연결 -->
+    <script type="module" src="../js/common/footer.js"></script>
   </body>
 </html>
