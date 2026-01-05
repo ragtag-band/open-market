@@ -31,7 +31,7 @@ footer.innerHTML = `
 
     <!-- SNS 아이콘 -->
     <!-- 인스타그램 -->
-    <div class="footer-social">
+    <div class="footer-sns">
       <a href="#" class="social-icon instagram" aria-label="Instagram">
         <svg width="32" height="32">
           <use href="../assets/icons/sprite.svg#icon-instagram"></use>

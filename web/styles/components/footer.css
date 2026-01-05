@@ -50,6 +50,10 @@
   text-decoration: none;
 }
 
+.footer-sns svg {
+  display: block;
+}
+
 /* 구분선 */
 .footer-line {
   width: min(1200px, 92vw);
