@@ -97,8 +97,19 @@ closeModalCartNd.forEach((btn) => {
 });
 /** ---------------------------------------------------
  * 상품 메뉴 버튼
+ * - 클릭 시 버튼 색상 변경 (재클릭 시 원래 색상으로)
  */
-
+const btnMenu = document.querySelectorAll(".btn-menu");
+btnMenu.forEach((button) => {
+  button.addEventListener("click", function () {
+    if (this.classList.contains("menu-active")) {
+      this.classList.remove("menu-active");
+    } else {
+      btnMenu.forEach((btn) => btn.classList.remove("menu-active"));
+      this.classList.add("menu-active");
+    }
+  });
+});
 /** TO DO ---------------------------------------------
  * 장바구니 페이지로 이동 -'예' 버튼 클릭 시 장바구니 페이지로 이동
  * 로그인 페이지로 이동 - '예' 버튼 클릭 시 로그인 페이지로 이동
