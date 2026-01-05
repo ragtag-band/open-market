@@ -56,7 +56,6 @@ async function loadProducts({ page, search }) {
 
   try {
     // API 요청 주소 만들기
-    // 예: https://서버주소/api/products
     const url = new URL("/api/products", API_BASE_URL);
 
     // 페이지 번호

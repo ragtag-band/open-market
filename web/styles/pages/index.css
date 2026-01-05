@@ -251,6 +251,13 @@
   .products__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .product-thumb img {
+    width: 100%;
+    max-width: none;
+  }
+  .product-card {
+    margin: 0 auto;
+  }
 }
 @media (max-width: 480px) {
   .products__grid {

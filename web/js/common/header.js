@@ -75,7 +75,9 @@ header.innerHTML = headerHTML;
 // - index.js가 URL의 search를 읽어 API로 다시 불러옴
 // =======================
 
+// header__search 클래스를 찾아서 form 변수에 저장
 const form = header.querySelector(".header__search");
+// 헤더 안에 입력창 요소를 찾아 input 변수에 저장
 const input = header.querySelector(".header__search-input");
 
 // URL에 search가 있으면(메인에서 검색 후 새로고침/뒤로가기) input에 유지
