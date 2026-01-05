@@ -178,6 +178,11 @@ body {
   padding: 0.7rem 2rem;
   border-bottom: var(--border-line-light-gray) 6px solid;
 }
+.menu-active {
+  border-bottom: var(--green-color) 6px solid;
+  color: var(--green-color);
+  font-weight: bold;
+}
 /* ------------------------------------*/
 /*          modal       */
 /* ------------------------------------*/
