@@ -4,22 +4,24 @@
   --black-color: #000000;
   --green-color: #21bf48; /* 구매 버튼 색상, 총 금액 색상 */
   --white-color: #ffffff;
+
   /* etc */
   --border-line-gray: #c4c4c4;
   --border-line-light-gray: #e0e0e0;
 }
 
-html {
-  font-size: 14px;
-}
+/* ✅ 헤더 확대 방지: html 폰트 크기 건드리지 않음 */
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: white;
 }
+
+/* ✅ 헤더 영역은 항상 100% */
+#header {
+  width: 100%;
+}
+
 /* ------------------------------------*/
 /*             font style              */
 /* ------------------------------------*/
@@ -57,24 +59,34 @@ body {
   color: var(--green-color);
   font-weight: bold;
 }
+
 /* ------------------------------------*/
 /*          page layout style          */
 /* ------------------------------------*/
+/* ✅ 상세 페이지 본문만 글자/스케일을 관리 (헤더는 영향 없음) */
 .product-container {
+  font-size: 14px; /* ← 상세 페이지 기본 글자 크기 */
+
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1200px;
+
+  /* 헤더 아래로 자연스럽게 시작 */
+  margin: 0 auto 10rem;
+  padding: 2rem 16px;
+
   justify-content: center;
   align-items: center;
-  margin: 4rem 0 10rem 0;
 }
+
 .product {
   gap: 2rem;
 }
-/* ------------------------------------*/
-/*          product details       */
-/* ------------------------------------*/
 
+/* ------------------------------------*/
+/*          product details            */
+/* ------------------------------------*/
 .product-details {
   margin-top: 3rem;
   display: flex;
@@ -84,6 +96,7 @@ body {
   margin-bottom: 1rem;
   border-bottom: var(--border-line-gray) 2px solid;
 }
+
 /* -----------/ quantity selector /-----------*/
 .quantity-select {
   width: 7.5rem;
@@ -115,15 +128,14 @@ body {
   height: 2rem;
   border: none;
   background-color: var(--white-color);
-
   cursor: pointer;
   padding: 0;
 }
-
 .btn-quantity svg {
   width: 100%;
   height: 100%;
 }
+
 /* -----------/ total : quantity and price /-----------*/
 .total {
   margin-top: 1.2rem;
@@ -144,6 +156,7 @@ body {
   flex-direction: row;
   gap: 2rem;
 }
+
 /* ----------/ button: buy and cart /---------------*/
 .btn-buy {
   width: 14rem;
@@ -163,7 +176,7 @@ body {
 }
 
 /* ------------------------------------*/
-/*          product menu       */
+/*          product menu               */
 /* ------------------------------------*/
 .product-menu {
   margin-top: 4rem;
@@ -185,8 +198,9 @@ body {
   color: var(--green-color);
   font-weight: bold;
 }
+
 /* ------------------------------------*/
-/*          modal       */
+/*          modal                      */
 /* ------------------------------------*/
 .modal {
   position: fixed;
@@ -247,6 +261,7 @@ body {
   padding: 0.3rem 1.5rem;
   cursor: pointer;
 }
+
 /* -------/ modal : click to cart page /-------*/
 .hidden-cart-st {
   display: none;
@@ -254,6 +269,10 @@ body {
 .hidden-cart-nd {
   display: none;
 }
+
+/* ------------------------------------*/
+/*          responsive                 */
+/* ------------------------------------*/
 @media (min-width: 890px) {
   .product {
     margin: 2rem 0 2rem 0;
@@ -276,9 +295,11 @@ body {
 }
 
 @media (min-width: 1300px) {
-  html {
+  /* ✅ 헤더는 그대로, 상세 본문만 커지게 */
+  .product-container {
     font-size: 18px;
   }
+
   .product-title,
   .product-price,
   .product-price-gn {
