@@ -187,6 +187,11 @@ function initEventListeners() {
       hideModal(DOM.cartModalFirst)
     );
   }
+  if (DOM.btnYesCartSt) {
+    DOM.btnYesCartSt.addEventListener("click", () => {
+      window.location.href = "./cart.html";
+    });
+  }
   // cart modal -2
 }
 
@@ -266,7 +271,7 @@ function handleBuyNow() {
  */
 function handleAddToCart() {
   // 1. 로그인 정보 확인 (localStorage에서 token 확인)
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("STORAGE_KEYS");
 
   if (!token) {
     // 2. 로그아웃 → 로그인 모달 표시
