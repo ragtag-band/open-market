@@ -1,195 +1,21 @@
-.hidden {
-  display: none;
-}
-
-.error-msg {
-  min-height: 16px;
-  margin-top: 6px;
-  font-size: 12px;
-  line-height: 16px;
-  color: #d32f2f;
-}
-
-.error-msg--success {
-  color: #2e7d32;
-}
-
-.input-error {
-  border-color: #d32f2f !important;
-  outline-color: #d32f2f;
-}
-
-.phone-inputs.input-error > input,
-.phone-inputs.input-error > select {
-  border-color: #d32f2f;
-  outline-color: #d32f2f;
-}
-
-:root {
-  --brand-green: #2ab34b; 
-  --border-color: #e5e7eb;
-  --text-muted: #6b7280;
-  --bg-page: #ffffff;
-  --bg-card: #ffffff;
-}
-
-body {
-  background: var(--bg-page);
-}
-
-.signup-container {
-  width: min(42rem, calc(100% - 4rem)); /* 420px 느낌 */
-  margin: 6rem auto;
-  padding: 0;
-}
-
-.signup-logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 7.5rem;
-}
-
-.signup-logo img {
-  height: auto;
-  width: auto;
-}
-
-.signup-tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--border-color);
-  border-bottom: none;
-  border-radius: 0.6rem 0.6rem 0 0;
-  overflow: hidden;
-}
-
-.tab-btn {
-  padding: 1.2rem 0;
-  font-size: 1.4rem;
-  font-weight: 600;
-  background: #f3f4f6;      
-  color: #111827;
-  border-right: 1px solid var(--border-color);
-}
-
-.tab-btn:last-child {
-  border-right: none;
-}
-
-.tab-btn.active {
-  background: var(--bg-card); 
-}
-
-.signup-form {
-  border: 1px solid var(--border-color);
-  border-radius: 0 0 0.6rem 0.6rem;
-  padding: 2.4rem;
-  background: var(--bg-card);
-}
-
-.input-group {
-  margin-bottom: 1.6rem;
-}
-
-.input-group label {
-  display: block;
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 0.6rem;
-}
-
-.input-group input,
-.input-group select {
-  width: 100%;
-  height: 4.2rem;
-  padding: 0 1.2rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.4rem;
-  font-size: 1.4rem;
-  background: #fff;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-  outline: none;
-  border-color: rgba(42, 179, 75, 0.6);
-  box-shadow: 0 0 0 0.2rem rgba(42, 179, 75, 0.15);
-}
-
-.with-btn {
-  display: grid;
-  grid-template-columns: 1fr 9rem; 
-  gap: 1rem;
-  align-items: end;
-}
-
-.phone-inputs {
-  display: grid;
-  grid-template-columns: 8rem 1fr 1fr;
-  gap: 1rem;
-}
-
-#seller-fields {
-  margin-top: 0.8rem;
-}
+/* 
+   Common states
+*/
 
 .hidden {
   display: none;
 }
 
-.agreement {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.8rem;
-}
-
-.agreement input[type="checkbox"] {
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
-.agreement label {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-}
-
-.sub-btn {
-  height: 4.2rem;
-  border-radius: 0.4rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--brand-green);
-}
-
-.sub-btn:hover {
-  filter: brightness(0.95);
-}
-
-.main-btn {
-  width: 100%;
-  height: 4.6rem;
-  border-radius: 0.4rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 2.0rem;
-  color: #fff;
-  background: var(--brand-green);
-}
-
-.main-btn:disabled {
-  background: #cfcfcf; 
-  cursor: not-allowed;
-  filter: none;
-}
+/* 
+   Error / Success
+*/
 
 .error-msg {
   min-height: 1.6rem;
-  margin-top: 0.6rem;
+  margin-top: var(--space-xs);
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--color-danger); 
+  color: var(--color-danger);
 }
 
 .error-msg--success {
@@ -205,4 +31,179 @@ body {
 .phone-inputs.input-error > select {
   border-color: var(--color-danger);
   outline-color: var(--color-danger);
+}
+
+/*
+   Page layout
+*/
+
+body {
+  background: var(--bg-page);
+}
+
+.signup-container {
+  width: min(42rem, calc(100% - 4rem));
+  margin: 6rem auto;
+  padding: 0;
+}
+
+/*
+   Logo
+*/
+
+.signup-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7.5rem;
+}
+
+.signup-logo img {
+  width: auto;
+  height: auto;
+}
+
+/*
+   Tabs
+*/
+
+.signup-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+}
+
+.tab-btn {
+  padding: 1.2rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #111827;
+  border-right: 1px solid var(--border-color);
+}
+
+.tab-btn:last-child {
+  border-right: none;
+}
+
+.tab-btn.active {
+  background: var(--bg-card);
+}
+
+/*
+   Form
+*/
+
+.signup-form {
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+}
+
+.input-group {
+  margin-bottom: var(--space-md);
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1.4rem;
+  background: #fff;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 0.2rem rgba(42, 179, 75, 0.15);
+}
+
+/*
+   Special layouts
+*/
+
+.with-btn {
+  display: grid;
+  grid-template-columns: 1fr 9rem;
+  gap: var(--space-sm);
+  align-items: end;
+}
+
+.phone-inputs {
+  display: grid;
+  grid-template-columns: 8rem 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+#seller-fields {
+  margin-top: var(--space-sm);
+}
+
+/*
+   Agreement
+*/
+
+.agreement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.agreement input[type="checkbox"] {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.agreement label {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
+/*
+   Buttons
+*/
+
+.sub-btn {
+  height: var(--input-height);
+  border-radius: var(--radius-sm);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.sub-btn:hover {
+  filter: brightness(0.95);
+}
+
+.main-btn {
+  width: 100%;
+  height: var(--button-height);
+  border-radius: var(--radius-sm);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: var(--space-md);
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.main-btn:disabled {
+  background: #cfcfcf;
+  cursor: not-allowed;
+  filter: none;
 }

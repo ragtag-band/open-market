@@ -1,6 +1,6 @@
 // 공통 fetch 
 
-import { API_BASE_URL, STORAGE_KEYS } from "./config.js";
+import { API_BASE_URL, STORAGE_KEYS } from "/js/common/config.js";
 
 async function request(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
