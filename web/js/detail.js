@@ -27,6 +27,9 @@ const DOM = {
   buyBtn: document.getElementById("btn-buy"),
   cartBtn: document.getElementById("btn-cart"),
 
+  // ----------- tab section -------------
+  btnMenus: document.querySelectorAll(".btn-menu"),
+  tabContents: document.querySelectorAll(".tab-content"),
   // ------------- modal --------------
   loginModal: document.getElementById("modal-login"),
   cartModalFirst: document.getElementById("modal-cart-st"),
@@ -146,6 +149,19 @@ function initEventListeners() {
   if (DOM.cartBtn) {
     DOM.cartBtn.addEventListener("click", handleAddToCart);
   }
+  // tab-section
+  if (DOM.btnMenus) {
+    DOM.btnMenus.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        DOM.btnMenus.forEach((b) => b.classList.remove("active-tab"));
+        DOM.tabContents.forEach((content) =>
+          content.classList.remove("active-tab")
+        );
+        btn.classList.add("active-tab");
+        DOM.tabContents[index].classList.add("active-tab");
+      });
+    });
+  }
   // login modal
   if (DOM.closeLoginBtn) {
     DOM.closeLoginBtn.addEventListener("click", () =>
@@ -157,7 +173,7 @@ function initEventListeners() {
   }
   if (DOM.btnYes) {
     DOM.btnYes.addEventListener("click", () => {
-      window.location.href = "./login.html";
+      window.location.href = "./signin.html";
     });
   }
   // cart modal -1
