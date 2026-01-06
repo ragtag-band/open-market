@@ -1,7 +1,7 @@
 // 로그인 / 회원가입 API 함수
 
 import { api } from "./api.js";
-import { STORAGE_KEYS } from "./config.js";
+import { STORAGE_KEYS } from "/js/common/config.js";
 
 export async function signin({ username, password }) {
 const data = await api.post("/accounts/signin", { username, password });
