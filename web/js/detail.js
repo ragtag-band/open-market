@@ -277,8 +277,9 @@ function handleBuyNow() {
   };
 
   // 4. 주문 데이터를 오더 페이지로 이동
+  // - 주문 페이지 구현하지 않았기에 404페이지로 이동
   sessionStorage.setItem("orderData", JSON.stringify(orderData));
-  window.location.href = "./cart.html";
+  window.location.href = "./404.html";
 }
 
 /** ========================================================
