@@ -1,0 +1,27 @@
+.hidden {
+  display: none;
+}
+
+.error-msg {
+  min-height: 16px;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #d32f2f;
+}
+
+.error-msg--success {
+  color: #2e7d32;
+}
+
+.input-error {
+  border-color: #d32f2f !important;
+  outline-color: #d32f2f;
+}
+
+/* ✅ 휴대폰 번호 그룹 에러 */
+.phone-inputs.input-error > input,
+.phone-inputs.input-error > select {
+  border-color: #d32f2f;
+  outline-color: #d32f2f;
+}
