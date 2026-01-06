@@ -23,7 +23,7 @@ signinForm.addEventListener("submit", async (event) => {
 });
 
 signupBtn.addEventListener("click", () => {
-  window.location.href = "/index.html";
+  window.location.href = "/html/signup.html";
 });
 
 // window.addEventListener("DOMContentLoaded", () => {
