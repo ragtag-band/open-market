@@ -94,14 +94,14 @@ header.innerHTML = headerHTML;
 // 로그아웃 바인딩 (임시)
 // =======================
 
-  const logoutBtn = document.getElementById("btn-logout");
- 
+const logoutBtn = document.getElementById("btn-logout");
+
+if (logoutBtn) {
   logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault(); 
-    signout();          
+    e.preventDefault();
+    signout();
   });
-
-
+}
 
 // =======================
 // 검색 기능 (공통 헤더)
