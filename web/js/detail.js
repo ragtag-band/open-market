@@ -254,6 +254,7 @@ function updateQuantityDisplay() {
  * - 스토리지에 저장된 로그인 정보에 따라
  * - 로그아웃 : 로그인 모달 표시
  * - 로그인 : 주문 데이터를 생성하여 오더 페이지로 이동
+ * - 오더 페이지를 생성하지 않았기에 404페이지로 이동
  */
 function handleBuyNow() {
   // 1. 로그인 정보 확인 (localStorage에서 token 확인)
@@ -277,7 +278,7 @@ function handleBuyNow() {
   };
 
   // 4. 주문 데이터를 오더 페이지로 이동
-  // - 주문 페이지 구현하지 않았기에 404페이지로 이동
+  // - 오더 페이지를 생성하지 않았기에 404페이지로 이동
   sessionStorage.setItem("orderData", JSON.stringify(orderData));
   window.location.href = "./404.html";
 }
