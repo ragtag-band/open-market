@@ -46,10 +46,6 @@ export function validateSignup(values) {
     }
   }
 
-  if (!values.agree) {
-    errors.agree = "약관에 동의해야 가입할 수 있습니다.";
-  }
-
   const isValid = Object.keys(errors).length === 0;
 
   const normalized = isValid
@@ -59,11 +55,6 @@ export function validateSignup(values) {
   return { isValid, errors, normalized };
 }
 
-/** ====== password check icon helpers ======
- * HTML:
- *  <svg class="check-icon" data-check="password">...</svg>
- *  <svg class="check-icon" data-check="passwordConfirm">...</svg>
- */
 function getCheckIcon(formEl, key) {
   return formEl.querySelector(`.check-icon[data-check="${key}"]`);
 }
@@ -91,7 +82,6 @@ export function clearInlineErrors(formEl) {
     el.classList.remove("input-error");
   });
 
-  // 아이콘 초기화
   formEl.querySelectorAll(".check-icon").forEach((icon) => {
     icon.classList.remove("is-valid", "is-invalid");
   });
@@ -113,31 +103,22 @@ export function clearFieldMessage(formEl, key, inputSelector) {
   }
 }
 
-/**
- * ✅ 중요 변경점:
- * password/passwordConfirm는 어떤 경로로 호출돼도 "텍스트 메시지 출력 금지"
- * 대신 체크 아이콘(is-invalid)로만 표현
- */
 export function showFieldError(formEl, key, message, inputSelector) {
-  // password 계열은 텍스트를 절대 표시하지 않는다(깜빡임 방지)
   if (isPasswordKey(key)) {
     const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
     if (msgEl) {
-      msgEl.textContent = ""; // 항상 비움
+      msgEl.textContent = ""; 
       msgEl.classList.remove("error-msg--success");
     }
 
-    // 아이콘 빨강
     setCheckIconState(formEl, key, "invalid");
 
-    // input 테두리 빨강을 유지하고 싶으면 아래 유지, 싫으면 제거
     if (inputSelector) {
       formEl.querySelector(inputSelector)?.classList.add("input-error");
     }
     return;
   }
 
-  // 그 외 필드는 기존 방식
   const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
   if (msgEl) {
     msgEl.textContent = message;
@@ -149,7 +130,6 @@ export function showFieldError(formEl, key, message, inputSelector) {
 }
 
 export function showFieldSuccess(formEl, key, message) {
-  // password 계열은 텍스트 success도 사용하지 않음(아이콘으로만)
   if (isPasswordKey(key)) return;
 
   const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
@@ -170,12 +150,10 @@ export function showInlineErrors(formEl, errors) {
     agree: "#agree-check",
   };
 
-  // 에러 표시
   Object.entries(errors).forEach(([key, message]) => {
     showFieldError(formEl, key, message, INPUT_MAP[key]);
   });
 
-  // ✅ 에러가 없는 경우엔 password 아이콘을 valid/neutral로 동기화
   const pw = formEl.querySelector("#password")?.value?.trim() ?? "";
   const pw2 = formEl.querySelector("#password-confirm")?.value?.trim() ?? "";
 
@@ -193,7 +171,6 @@ export function showInlineErrors(formEl, errors) {
     }
   }
 
-  // 첫 에러 포커스
   const firstKey = Object.keys(errors)[0];
   if (firstKey && INPUT_MAP[firstKey]) {
     formEl.querySelector(INPUT_MAP[firstKey])?.focus?.();

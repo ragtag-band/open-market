@@ -13,7 +13,7 @@ import {
 
 let userType = "buyer";
 
-const signupForm = document.querySelector(".signup-form");
+const signupForm = document.getElementById("signup-form");
 const sellerFields = document.getElementById("seller-fields");
 const tabBuyer = document.getElementById("tab-buyer");
 const tabSeller = document.getElementById("tab-seller");

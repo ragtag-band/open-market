@@ -16,7 +16,6 @@ export function initUserTypeTabs({ tabBuyer, tabSeller, initial = "buyer", onCha
   tabBuyer.addEventListener("click", () => setType("buyer"));
   tabSeller.addEventListener("click", () => setType("seller"));
 
-  // 초기 반영
   setType(userType);
 
   return {
