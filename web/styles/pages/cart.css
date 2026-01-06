@@ -16,15 +16,20 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 #header {
   width: 100%;
 }
+
 .cart-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  flex: 1;
 }
 .cart-title {
   font-size: 3rem;
@@ -74,7 +79,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 30rem;
+  height: 25rem;
 }
 .cart-page-none p {
   margin: 0.5rem;
