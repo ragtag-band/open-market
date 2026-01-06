@@ -193,7 +193,7 @@ signupForm.addEventListener("submit", async (event) => {
   try {
     await signup(signupData, userType);
     alert("회원가입이 완료되었습니다!");
-    // window.location.href = "/html/signin.html";
+    window.location.href = "/index.html";
   } catch (error) {
     showFieldError(
       signupForm,
