@@ -5,42 +5,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>로그인</title>
 
-    <link rel="stylesheet" href="/styles/base/reset.css">
-    <link rel="stylesheet" href="/styles/base/variables.css">
-    <link rel="stylesheet" href="/styles/base/typography.css">
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+    <link rel="stylesheet" href="/styles/base/typography.css" />
+    <link rel="stylesheet" href="/styles/pages/signin.css" />
 
     <script type="module" src="/js/signin.js" defer></script>
   </head>
 
   <body>
-    <form id="signin-form">
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="아이디"
-        required
-      />
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="비밀번호"
-        required
-      />
+    <div class="signin-container">
+      <div class="signin-logo">
+        <img src="/assets/images/Logo-jadu-lg.png" alt="ZADU" />
+      </div>
+<div class="signin-card">
+      <div class="signin-tabs">
+        <button type="button" id="tab-buyer" class="tab-btn active">
+          구매회원 로그인
+        </button>
+        <button type="button" id="tab-seller" class="tab-btn">
+          판매회원 로그인
+        </button>
+      </div>
 
-      <!-- <div>
-        <label>
-          <input type="radio" name="role" value="buyer" checked /> 구매회원
-        </label>
-        <label>
-          <input type="radio" name="role" value="seller" /> 판매회원
-        </label>
-      </div> -->
-      <button type="submit">로그인</button>
-      <button type="button" id="btn-signup">회원가입</button>
-    </form>
+      <form id="signin-form" class="signin-form" novalidate>
+        <div class="input-line">
+          <label for="username">아이디</label>
+          <input type="email" id="username" name="username" />
+        </div>
+
+        <div class="input-line">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" />
+        </div>
+
+        <button type="submit" class="main-btn">로그인</button>
+
+        <div class="signin-links">
+          <button type="button" id="btn-signup" class="link-btn">회원가입</button>
+          <span class="divider">|</span>
+      
+          <a href="#" class="link-a">비밀번호 찾기</a>
+        </div>
+      </form>
+      </div>
+    </div>
   </body>
 </html>
