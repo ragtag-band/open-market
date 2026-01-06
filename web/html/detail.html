@@ -26,17 +26,17 @@
         <!---/////product image/////-->
         <!-------------------------------------------------->
         <div class="product-img">
-          <img src="../assets/images/product3.png" alt="무릎담요-제품-소개-1" />
+          <img id="product-image" alt="상품 이미지" />
         </div>
         <!-------------------------------------------------->
         <!---/////product info/////-->
         <!-------------------------------------------------->
         <div class="product-info">
           <div class="information">
-            <p class="basic-font">백엔드 글로벌</p>
-            <p class="product-title">딥러닝 개발자 무릎 담요</p>
-            <p class="product-price">
-              17,500 <span class="basic-font-bk">원</span>
+            <p class="basic-font" id="product-seller"></p>
+            <p class="product-title" id="product-name"></p>
+            <p class="product-price" id="product-price">
+              <span class="basic-font-bk">원</span>
             </p>
           </div>
           <!-------------------------------------------------->
@@ -48,7 +48,12 @@
             </div>
             <!-----------------/ quantity select /------------------->
             <div class="quantity-select">
-              <button type="button" class="btn-quantity" id="decrease">
+              <button
+                type="button"
+                class="btn-quantity"
+                id="decrease"
+                aria-label="minus"
+              >
                 <svg>
                   <use href="../assets/icons/sprite.svg#icon-order-minus"></use>
                 </svg>
@@ -56,7 +61,12 @@
               <div class="quantity-value">
                 <p class="quantity basic-font-bk" id="quantity">1</p>
               </div>
-              <button type="button" class="btn-quantity" id="increase">
+              <button
+                type="button"
+                class="btn-quantity"
+                id="increase"
+                aria-label="plus"
+              >
                 <svg>
                   <use href="../assets/icons/sprite.svg#icon-order-plus"></use>
                 </svg>
@@ -72,7 +82,7 @@
                   <span class="basic-font">|</span>
                 </p>
                 <p>
-                  <span class="total-price-gn" id="total-price">17,500</span>
+                  <span class="total-price-gn" id="total-price"></span>
                   <span class="basic-font-gn">원</span>
                 </p>
               </div>
@@ -97,6 +107,12 @@
         <button type="button" class="btn-menu basic-font">리뷰</button>
         <button type="button" class="btn-menu basic-font">문의사항</button>
         <button type="button" class="btn-menu basic-font">반품/교환정보</button>
+      </div>
+      <div class="item-contents">
+        <div class="item-description">상품정보 내역입니다.</div>
+        <div class="item-review">리뷰 내역입니다.</div>
+        <div class="item-question">제품 관련 Q&A</div>
+        <div class="item-exchange">반품/교환정보 입니다.</div>
       </div>
     </main>
     <!-------------------------------------------------->
@@ -139,7 +155,11 @@
           <button type="button" class="btn-no basic-font" id="btn-no-cart-st">
             아니오
           </button>
-          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
+          <button
+            type="button"
+            class="btn-yes basic-font-wh"
+            id="btn-yes-cart-st"
+          >
             예
           </button>
         </div>
@@ -161,16 +181,26 @@
           <button type="button" class="btn-no basic-font" id="btn-no-cart-nd">
             아니오
           </button>
-          <button type="button" class="btn-yes basic-font-wh" id="btn-yes-cart">
+          <button
+            type="button"
+            class="btn-yes basic-font-wh"
+            id="btn-yes-cart-nd"
+          >
             예
           </button>
         </div>
       </div>
     </div>
     <!-- 상세페이지 JS 연결 -->
+<<<<<<< HEAD
     <script src="../js/detail.js"></script>
     <!-- 헤더 JS 연결 -->
     <script src="../js/common/header.js"></script>
+=======
+    <script type="module" src="../js/detail.js"></script>
+    <!-- 헤더 JS 연결 -->
+    <script type="module" src="../js/common/header.js"></script>
+>>>>>>> kyuri-moon
     <!-- 푸터 JS 연결 -->
     <script type="module" src="../js/common/footer.js"></script>
   </body>
