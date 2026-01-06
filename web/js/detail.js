@@ -5,7 +5,6 @@ import { API_BASE_URL, STORAGE_KEYS } from "./common/config.js";
 
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
-
 /** ========================================================
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화
@@ -196,6 +195,21 @@ function initEventListeners() {
     });
   }
   // cart modal -2
+  if (DOM.closeCartNdBtn) {
+    DOM.closeCartNdBtn.addEventListener("click", () =>
+      hideModal(DOM.cartModalSecond)
+    );
+  }
+  if (DOM.btnNoCartNd) {
+    DOM.btnNoCartNd.addEventListener("click", () =>
+      hideModal(DOM.cartModalSecond)
+    );
+  }
+  if (DOM.btnYesCartNd) {
+    DOM.btnYesCartNd.addEventListener("click", () => {
+      window.location.href = "./cart.html";
+    });
+  }
 }
 
 /** ========================================================
@@ -313,7 +327,7 @@ function handleAddToCart() {
     cart.push(cartItem);
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // 11-7. "장바구니 담기 성공" 모달 표시
+    // 7. "장바구니 담기 성공" 모달 표시
     showModal(DOM.cartModalFirst);
   }
 }
