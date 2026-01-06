@@ -7,12 +7,15 @@ const signinForm = document.getElementById("signin-form");
 const signupBtn = document.getElementById("btn-signup");
 const tabBuyer = document.getElementById("tab-buyer");
 const tabSeller = document.getElementById("tab-seller");
+const errorMsg = document.getElementById("signin-error");
 
 const tabs = initUserTypeTabs({
   tabBuyer,
   tabSeller,
   initial: "buyer",
 });
+
+errorMsg.textContent = "";
 
 
 signinForm.addEventListener("submit", async (event) => {
@@ -28,7 +31,7 @@ signinForm.addEventListener("submit", async (event) => {
     alert("로그인 성공");
     window.location.href = "/index.html";
   } catch (err) {
-    alert(err.message);
+    errorMsg.textContent = err.message;
   }
 });
 
