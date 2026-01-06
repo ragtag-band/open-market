@@ -12,11 +12,11 @@ signinForm.addEventListener("submit", async (event) => {
   const username = (formData.get("username") || "").trim();
   const password = (formData.get("password") || "").trim();
 
- try {
+  try {
     const data = await signin({ username, password });
 
     alert("로그인 성공");
-    window.location.href = "/html/index.html";
+    window.location.href = "/index.html";
   } catch (err) {
     alert(err.message);
   }
@@ -33,5 +33,3 @@ signupBtn.addEventListener("click", () => {
 //     window.location.href = "/html/index-test.html";
 //   }
 // });
-
-
