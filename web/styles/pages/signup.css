@@ -189,20 +189,20 @@ body {
   margin-top: 0.6rem;
   font-size: 1.2rem;
   line-height: 1.6rem;
-  color: var(--danger-color); 
+  color: var(--color-danger); 
 }
 
 .error-msg--success {
-  color: var(--success-color);
+  color: var(--color-success);
 }
 
 .input-error {
-  border-color: var(--danger-color) !important;
-  outline-color: var(--danger-color);
+  border-color: var(--color-danger) !important;
+  outline-color: var(--color-danger);
 }
 
 .phone-inputs.input-error > input,
 .phone-inputs.input-error > select {
-  border-color: var(--danger-color);
-  outline-color: var(--danger-color);
+  border-color: var(--color-danger);
+  outline-color: var(--color-danger);
 }
