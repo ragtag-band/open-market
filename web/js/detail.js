@@ -177,6 +177,16 @@ function initEventListeners() {
     });
   }
   // cart modal -1
+  if (DOM.closeCartStBtn) {
+    DOM.closeCartStBtn.addEventListener("click", () =>
+      hideModal(DOM.cartModalFirst)
+    );
+  }
+  if (DOM.btnNoCartSt) {
+    DOM.btnNoCartSt.addEventListener("click", () =>
+      hideModal(DOM.cartModalFirst)
+    );
+  }
   // cart modal -2
 }
 
