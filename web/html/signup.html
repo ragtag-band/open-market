@@ -18,7 +18,9 @@
 
     <div class="signup-container">
       <div class="signup-logo">
+        <a href="/index.html" aria-label="메인 페이지로 이동">
          <img src="../assets/images/Logo-jadu-lg.png" alt="ZADU" />
+         </a>
       </div>
 
       <div class="signup-tabs">
@@ -48,14 +50,24 @@
 
         <div class="input-group">
           <label for="password">비밀번호</label>
-          <input type="password" id="password"  />
-          <p class="error-msg" data-error-for="password"></p>
+           <div class="input-with-icon">
+            <input type="password" id="password"  />
+            <svg class="check-icon" data-check="password">
+              <use href="/assets/icons/sprite.svg#icon-check-password"></use>
+            </svg>
+           </div>
+          <!-- <p class="error-msg" data-error-for="password"></p> -->
         </div>
 
         <div class="input-group">
           <label for="password-confirm">비밀번호 재확인</label>
-          <input type="password" id="password-confirm"  />
-          <p class="error-msg" data-error-for="passwordConfirm"></p>
+          <div class="input-with-icon">
+            <input type="password" id="password-confirm"  />
+            <svg class="check-icon" data-check="passwordConfirm">
+              <use href="/assets/icons/sprite.svg#icon-check-password"></use>
+            </svg>
+          </div>
+          <!-- <p class="error-msg" data-error-for="passwordConfirm"></p> -->
         </div>
 
         <div class="input-group">
@@ -69,6 +81,11 @@
           <div class="phone-inputs">
             <select id="phone-1">
               <option value="010">010</option>
+              <option value="010">011</option>
+              <option value="010">016</option>
+              <option value="010">017</option>
+              <option value="010">018</option>
+              <option value="010">019</option>
             </select>
             <input type="number" id="phone-2"  />
             <input type="number" id="phone-3"  />

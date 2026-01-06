@@ -1,3 +1,5 @@
+// 공통 함수
+
 export function initUserTypeTabs({ tabBuyer, tabSeller, initial = "buyer", onChange }) {
   let userType = initial;
 

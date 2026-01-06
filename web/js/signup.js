@@ -177,7 +177,7 @@ signupForm.addEventListener("submit", async (event) => {
     const hasSellerError =
       "companyRegistrationNumber" in errors || "storeName" in errors;
 
-    if (hasSellerError) setUserType("seller");
+    if (hasSellerError) tabs.setType("seller");
 
     showInlineErrors(signupForm, errors);
     return;
@@ -204,5 +204,4 @@ signupForm.addEventListener("submit", async (event) => {
   }
 });
 
-setUserType(userType);
 syncAgreeState();
