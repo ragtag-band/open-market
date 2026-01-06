@@ -1,47 +1,55 @@
+/* 
+   Common states
+*/
+
 .hidden {
   display: none;
 }
 
+/* 
+   Error / Success
+*/
+
 .error-msg {
-  min-height: 16px;
-  margin-top: 6px;
-  font-size: 12px;
-  line-height: 16px;
-  color: #d32f2f;
+  min-height: 1.6rem;
+  margin-top: var(--space-xs);
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--color-danger);
 }
 
 .error-msg--success {
-  color: #2e7d32;
+  color: var(--color-success);
 }
 
 .input-error {
-  border-color: #d32f2f !important;
-  outline-color: #d32f2f;
+  border-color: var(--color-danger) !important;
+  outline-color: var(--color-danger);
 }
 
 .phone-inputs.input-error > input,
 .phone-inputs.input-error > select {
-  border-color: #d32f2f;
-  outline-color: #d32f2f;
+  border-color: var(--color-danger);
+  outline-color: var(--color-danger);
 }
 
-:root {
-  --brand-green: #2ab34b; 
-  --border-color: #e5e7eb;
-  --text-muted: #6b7280;
-  --bg-page: #ffffff;
-  --bg-card: #ffffff;
-}
+/*
+   Page layout
+*/
 
 body {
   background: var(--bg-page);
 }
 
 .signup-container {
-  width: min(42rem, calc(100% - 4rem)); /* 420px 느낌 */
+  width: min(42rem, calc(100% - 4rem));
   margin: 6rem auto;
   padding: 0;
 }
+
+/*
+   Logo
+*/
 
 .signup-logo {
   display: flex;
@@ -50,16 +58,20 @@ body {
 }
 
 .signup-logo img {
-  height: auto;
   width: auto;
+  height: auto;
 }
+
+/*
+   Tabs
+*/
 
 .signup-tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 1px solid var(--border-color);
   border-bottom: none;
-  border-radius: 0.6rem 0.6rem 0 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   overflow: hidden;
 }
 
@@ -67,7 +79,7 @@ body {
   padding: 1.2rem 0;
   font-size: 1.4rem;
   font-weight: 600;
-  background: #f3f4f6;      
+  background: #f3f4f6;
   color: #111827;
   border-right: 1px solid var(--border-color);
 }
@@ -77,34 +89,38 @@ body {
 }
 
 .tab-btn.active {
-  background: var(--bg-card); 
+  background: var(--bg-card);
 }
+
+/*
+   Form
+*/
 
 .signup-form {
   border: 1px solid var(--border-color);
-  border-radius: 0 0 0.6rem 0.6rem;
-  padding: 2.4rem;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: var(--space-lg);
   background: var(--bg-card);
 }
 
 .input-group {
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--space-md);
 }
 
 .input-group label {
   display: block;
   font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 0.6rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
 }
 
 .input-group input,
 .input-group select {
   width: 100%;
-  height: 4.2rem;
+  height: var(--input-height);
   padding: 0 1.2rem;
   border: 1px solid var(--border-color);
-  border-radius: 0.4rem;
+  border-radius: var(--radius-sm);
   font-size: 1.4rem;
   background: #fff;
 }
@@ -112,36 +128,40 @@ body {
 .input-group input:focus,
 .input-group select:focus {
   outline: none;
-  border-color: rgba(42, 179, 75, 0.6);
+  border-color: var(--brand-green);
   box-shadow: 0 0 0 0.2rem rgba(42, 179, 75, 0.15);
 }
 
+/*
+   Special layouts
+*/
+
 .with-btn {
   display: grid;
-  grid-template-columns: 1fr 9rem; 
-  gap: 1rem;
+  grid-template-columns: 1fr 9rem;
+  gap: var(--space-sm);
   align-items: end;
 }
 
 .phone-inputs {
   display: grid;
   grid-template-columns: 8rem 1fr 1fr;
-  gap: 1rem;
+  gap: var(--space-sm);
 }
 
 #seller-fields {
-  margin-top: 0.8rem;
+  margin-top: var(--space-sm);
 }
 
-.hidden {
-  display: none;
-}
+/*
+   Agreement
+*/
 
 .agreement {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.8rem;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
 }
 
 .agreement input[type="checkbox"] {
@@ -151,12 +171,16 @@ body {
 
 .agreement label {
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: var(--color-muted);
 }
 
+/*
+   Buttons
+*/
+
 .sub-btn {
-  height: 4.2rem;
-  border-radius: 0.4rem;
+  height: var(--input-height);
+  border-radius: var(--radius-sm);
   font-size: 1.3rem;
   font-weight: 600;
   color: #fff;
@@ -169,40 +193,17 @@ body {
 
 .main-btn {
   width: 100%;
-  height: 4.6rem;
-  border-radius: 0.4rem;
+  height: var(--button-height);
+  border-radius: var(--radius-sm);
   font-size: 1.5rem;
   font-weight: 700;
-  margin-top: 2.0rem;
+  margin-top: var(--space-md);
   color: #fff;
   background: var(--brand-green);
 }
 
 .main-btn:disabled {
-  background: #cfcfcf; 
+  background: #cfcfcf;
   cursor: not-allowed;
   filter: none;
-}
-
-.error-msg {
-  min-height: 1.6rem;
-  margin-top: 0.6rem;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  color: var(--danger-color); 
-}
-
-.error-msg--success {
-  color: var(--success-color);
-}
-
-.input-error {
-  border-color: var(--danger-color) !important;
-  outline-color: var(--danger-color);
-}
-
-.phone-inputs.input-error > input,
-.phone-inputs.input-error > select {
-  border-color: var(--danger-color);
-  outline-color: var(--danger-color);
 }

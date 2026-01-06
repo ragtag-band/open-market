@@ -1,7 +1,7 @@
 // 로그인 / 회원가입 API 함수
 
 import { api } from "./api.js";
-import { STORAGE_KEYS } from "./config.js";
+import { STORAGE_KEYS } from "/js/common/config.js";
 
 export async function signin({ username, password }) {
 const data = await api.post("/accounts/signin", { username, password });
@@ -20,7 +20,7 @@ export async function signout() {
 
   alert("로그아웃 되었습니다.");
 
-  window.location.href = "/html/index.html";
+  window.location.href = "/index.html";
 }
 
 export async function signup(signupData, userType) {
