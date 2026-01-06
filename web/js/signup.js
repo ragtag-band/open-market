@@ -1,5 +1,6 @@
-import { api } from "./common/api.js";
-import { signup } from "./common/auth.js";
+import { api } from "/js/common/api.js";
+import { signup } from "/js/common/auth.js";
+import { initUserTypeTabs } from "/js/common/until.js";
 import {
   validateSignup,
   isEmail,
@@ -59,17 +60,19 @@ function buildSignupPayload(values, normalized) {
   return payload;
 }
 
-function setUserType(selectedType) {
-  userType = selectedType;
-  const isSeller = userType === "seller";
+const tabs = initUserTypeTabs({
+  tabBuyer,
+  tabSeller,
+  initial: "buyer",
+  onChange: (type) => {
+    userType = type;
 
-  sellerFields.classList.toggle("hidden", !isSeller);
+    const isSeller = userType === "seller";
+    sellerFields.classList.toggle("hidden", !isSeller);
 
-  tabSeller.classList.toggle("active", isSeller);
-  tabBuyer.classList.toggle("active", !isSeller);
-
-  clearInlineErrors(signupForm);
-}
+    clearInlineErrors(signupForm);
+  },
+});
 
 function syncAgreeState() {
   signupButton.disabled = !agreeCheck.checked;
@@ -79,9 +82,6 @@ function invalidateUsernameValidation() {
   isUsernameValidated = false;
   clearFieldMessage(signupForm, "username", "#username");
 }
-
-tabBuyer.addEventListener("click", () => setUserType("buyer"));
-tabSeller.addEventListener("click", () => setUserType("seller"));
 
 agreeCheck.addEventListener("change", () => {
   syncAgreeState();
