@@ -51,7 +51,7 @@ const headerHTML = `
   <div class="header__inner">
     <!-- 로고 -->
     <h1 class="header__logo">
-      <a href="./index.html" aria-label="홈으로">
+      <a href="/index.html" aria-label="홈으로">
         <img src="../assets/images/Logo-jadu.png" alt="ZADU" />
       </a>
     </h1>
@@ -94,14 +94,14 @@ header.innerHTML = headerHTML;
 // 로그아웃 바인딩 (임시)
 // =======================
 
-  const logoutBtn = document.getElementById("btn-logout");
- 
+const logoutBtn = document.getElementById("btn-logout");
+
+if (logoutBtn) {
   logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault(); 
-    signout();          
+    e.preventDefault();
+    signout();
   });
-
-
+}
 
 // =======================
 // 검색 기능 (공통 헤더)
@@ -126,7 +126,7 @@ if (form && input) {
     const keyword = input.value.trim();
 
     // 다른 페이지에서 검색해도 index로 이동하면서 search 전달
-    const url = new URL("./index.html", window.location.href);
+    const url = new URL("/index.html", window.location.href);
     if (keyword) url.searchParams.set("search", keyword);
     else url.searchParams.delete("search");
 

@@ -12,20 +12,32 @@
   --light-gray-border: #e0e0e0;
 }
 
-html {
-  height: 100%;
-  font-size: 1rem;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+#header {
+  width: 100%;
+}
+
 .cart-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  flex: 1;
 }
 .cart-title {
+  font-size: 3rem;
+  font-weight: 700;
   color: var(--black-color);
 }
-.tab-title {
+/* info-bar =============================*/
+.info-bar {
   background-color: var(--light-gray-bg-color);
   display: flex;
   flex-direction: row;
@@ -35,9 +47,10 @@ html {
   border-radius: 0.5rem;
   max-width: 1280px;
 }
-.tab-title p {
+.info-bar p {
   margin: 0;
   padding: 0.7rem;
+  font-size: 1.5rem;
   color: var(--black-color);
 }
 .item-info {
@@ -59,21 +72,24 @@ html {
   border-radius: 100%;
   border: 0.1rem solid var(--green-color);
 }
+
+/* cart-page-none =============================*/
 .cart-page-none {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  justify-content: center;
+  height: 25rem;
 }
 .cart-page-none p {
   margin: 0.5rem;
 }
 .none-text {
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--black-color);
 }
 .none-subtext {
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   color: var(--gray-color);
 }
