@@ -1,0 +1,44 @@
+<!-- 404 페이지 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | 페이지를 찾을 수 없습니다</title>
+
+    <!-- 404 페이지 CSS 연결 -->
+    <link rel="stylesheet" href="/styles/404.css" />
+  </head>
+  <body>
+    <main class="error">
+      <section class="error__container">
+        <div class="error__icon">
+          <img src="/assets/icons/icon-404.svg" alt="404 에러 아이콘" />
+        </div>
+
+        <div class="error__content">
+          <h1 class="error__title">페이지를 찾을 수 없습니다.</h1>
+          <p class="error__desc">
+            페이지가 존재하지 않거나 사용할 수 없는 페이지입니다.<br />
+            웹 주소가 올바른지 확인해 주세요.
+          </p>
+          <!-- 버튼 -->
+          <div class="error__actions">
+            <a href="/html/index.html" class="btn btn--primary">메인으로</a>
+            <button type="button" class="btn btn--ghost" id="backBtn">
+              이전 페이지
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- 404 페이지 JS (이전 페이지로 이동하는 버튼용) -->
+    <script>
+      document.getElementById("backBtn").addEventListener("click", () => {
+        if (history.length > 1) history.back();
+        else location.href = "/html/index.html";
+      });
+    </script>
+  </body>
+</html>

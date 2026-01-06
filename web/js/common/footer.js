@@ -32,20 +32,20 @@ footer.innerHTML = `
     <!-- SNS 아이콘 -->
     <!-- 인스타그램 -->
     <div class="footer-sns">
-      <a href="#" class="social-icon instagram" aria-label="Instagram">
+      <a href="https://www.instagram.com/" class="social-icon instagram" aria-label="Instagram">
         <svg width="32" height="32">
           <use href="../assets/icons/sprite.svg#icon-instagram"></use>
         </svg>
       </a>
 
       <!-- 페이스북 -->
-      <a href="#" class="social-icon facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/" class="social-icon facebook" aria-label="Facebook">
         <svg width="32" height="32">
           <use href="../assets/icons/sprite.svg#icon-facebook"></use>
         </svg>
       </a>
       <!-- 유튜브 -->
-      <a href="#" class="social-icon youtube" aria-label="YouTube">
+      <a href="https://www.youtube.com/" class="social-icon youtube" aria-label="YouTube">
         <svg width="32" height="32">
           <use href="../assets/icons/sprite.svg#icon-youtube"></use>
         </svg>
