@@ -85,6 +85,13 @@ body {
   box-shadow: 0 2px 0 rgba(42, 179, 75, 0.18);
 }
 
+.error-msg {
+  min-height: 1.6rem;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  color: var(--color-danger);
+}
+
 /* 로그인 버튼 */
 .main-btn {
   width: 100%;
