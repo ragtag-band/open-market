@@ -1,7 +1,7 @@
 // 상품 상세 페이지
 
 import { api } from "./common/api.js";
-import { API_BASE_URL } from "./common/config.js";
+import { API_BASE_URL, STORAGE_KEYS } from "./common/config.js";
 
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
@@ -171,11 +171,13 @@ function initEventListeners() {
   if (DOM.btnNo) {
     DOM.btnNo.addEventListener("click", () => hideModal(DOM.loginModal));
   }
+
   if (DOM.btnYes) {
     DOM.btnYes.addEventListener("click", () => {
       window.location.href = "./signin.html";
     });
   }
+
   // cart modal -1
   if (DOM.closeCartStBtn) {
     DOM.closeCartStBtn.addEventListener("click", () =>
@@ -240,9 +242,10 @@ function updateQuantityDisplay() {
  */
 function handleBuyNow() {
   // 1. 로그인 정보 확인 (localStorage에서 token 확인)
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
+  const accessToken = localStorage.getItem(STORAGE_KEYS.ACCESS);
 
-  if (!token) {
+  if (!accessToken) {
     // 2. 로그아웃 → 로그인 모달 표시
     showModal(DOM.loginModal);
     return;
@@ -260,7 +263,7 @@ function handleBuyNow() {
 
   // 4. 주문 데이터를 오더 페이지로 이동
   sessionStorage.setItem("orderData", JSON.stringify(orderData));
-  window.location.href = "./order.html";
+  window.location.href = "./cart.html";
 }
 
 /** ========================================================
@@ -271,9 +274,9 @@ function handleBuyNow() {
  */
 function handleAddToCart() {
   // 1. 로그인 정보 확인 (localStorage에서 token 확인)
-  const token = localStorage.getItem("STORAGE_KEYS");
-
-  if (!token) {
+  // const token = localStorage.getItem("STORAGE_KEYS");
+  const accessToken = localStorage.getItem(STORAGE_KEYS.ACCESS);
+  if (!accessToken) {
     // 2. 로그아웃 → 로그인 모달 표시
     showModal(DOM.loginModal);
     return;
