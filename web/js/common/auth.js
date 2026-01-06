@@ -23,8 +23,9 @@ export async function signout() {
   window.location.href = "/html/signin.html";
 }
 
-export async function signup({ username, password, email }) {
-  const data = await api.post("/accounts/signup", { username, password, email });
-  return data;  
+export async function signup(signupData, userType) {
+  let url = userType === "seller" ? "/accounts/seller/signup" : "/accounts/buyer/signup";
+  const data = await api.post(url, signupData);
+  return data;
 }
    
