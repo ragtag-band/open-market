@@ -1,0 +1,79 @@
+/* 장바구니 페이지 css */
+:root {
+  /* font color */
+  --gray-color: #767676;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --red-color: #eb5757;
+  /* etc. */
+  --light-gray-bg-color: #f2f2f2; /* tab title background */
+  --gray-bg-color: #c4c4c4; /* order amount box bg*/
+  --green-color: #21bf48; /* 주문하기 버튼, 체크 박스 */
+  --light-gray-border: #e0e0e0;
+}
+
+html {
+  height: 100%;
+  font-size: 1rem;
+}
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.cart-title {
+  color: var(--black-color);
+}
+.tab-title {
+  background-color: var(--light-gray-bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  border-radius: 0.5rem;
+  max-width: 1280px;
+}
+.tab-title p {
+  margin: 0;
+  padding: 0.7rem;
+  color: var(--black-color);
+}
+.item-info {
+  flex: 6;
+  text-align: center;
+}
+.item-quantity {
+  flex: 1;
+  text-align: center;
+}
+.item-price {
+  flex: 3;
+  text-align: center;
+}
+.check-box {
+  margin: 0 0 0 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  border: 0.1rem solid var(--green-color);
+}
+.cart-page-none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+.cart-page-none p {
+  margin: 0.5rem;
+}
+.none-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--black-color);
+}
+.none-subtext {
+  font-size: 0.7rem;
+  color: var(--gray-color);
+}
