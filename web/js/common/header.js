@@ -10,6 +10,8 @@
 // 3. 스타일시트 추가
 // <link rel="stylesheet" href="../styles/components/header.css" /> 를 head 태그 영역에 추가
 
+import { signout } from "./auth.js";
+
 // header id를 가진 요소를 찾는다
 const header = document.getElementById("header");
 
@@ -22,7 +24,7 @@ let authMenuHTML = "";
 if (accessToken) {
   // 로그인 상태 → 마이페이지
   authMenuHTML = `
-    <a class="header__menu-item" href="../html/mypage.html" aria-label="마이페이지">
+    <a class="header__menu-item" href="../html/index.html" id="btn-logout" aria-label="임시 로그아웃">
       <svg class="icon" aria-hidden="true">
         <use href="../assets/icons/sprite.svg#icon-user"></use>
       </svg>
@@ -87,6 +89,19 @@ const headerHTML = `
 
 // 위에 작성한 코드를 header라는 자리 안에 넣는다
 header.innerHTML = headerHTML;
+
+// =======================
+// 로그아웃 바인딩 (임시)
+// =======================
+
+  const logoutBtn = document.getElementById("btn-logout");
+ 
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    signout();          
+  });
+
+
 
 // =======================
 // 검색 기능 (공통 헤더)

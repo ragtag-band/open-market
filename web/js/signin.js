@@ -3,6 +3,7 @@
 import { signin } from "./common/auth.js";
 
 const signinForm = document.getElementById("signin-form");
+const signupBtn = document.getElementById("btn-signup");
 
 signinForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -19,6 +20,10 @@ signinForm.addEventListener("submit", async (event) => {
   } catch (err) {
     alert(err.message);
   }
+});
+
+signupBtn.addEventListener("click", () => {
+  window.location.href = "/html/signup.html";
 });
 
 // window.addEventListener("DOMContentLoaded", () => {

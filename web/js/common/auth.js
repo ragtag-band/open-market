@@ -20,7 +20,7 @@ export async function signout() {
 
   alert("로그아웃 되었습니다.");
 
-  window.location.href = "/html/signin.html";
+  window.location.href = "/html/index.html";
 }
 
 export async function signup(signupData, userType) {
