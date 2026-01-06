@@ -19,9 +19,190 @@
   outline-color: #d32f2f;
 }
 
-/* ✅ 휴대폰 번호 그룹 에러 */
 .phone-inputs.input-error > input,
 .phone-inputs.input-error > select {
   border-color: #d32f2f;
   outline-color: #d32f2f;
+}
+
+:root {
+  --brand-green: #2ab34b; 
+  --border-color: #e5e7eb;
+  --text-muted: #6b7280;
+  --bg-page: #ffffff;
+  --bg-card: #ffffff;
+}
+
+body {
+  background: var(--bg-page);
+}
+
+.signup-container {
+  width: min(42rem, calc(100% - 4rem)); /* 420px 느낌 */
+  margin: 6rem auto;
+  padding: 0;
+}
+
+.signup-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7.5rem;
+}
+
+.signup-logo img {
+  height: auto;
+  width: auto;
+}
+
+.signup-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: 0.6rem 0.6rem 0 0;
+  overflow: hidden;
+}
+
+.tab-btn {
+  padding: 1.2rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: #f3f4f6;      
+  color: #111827;
+  border-right: 1px solid var(--border-color);
+}
+
+.tab-btn:last-child {
+  border-right: none;
+}
+
+.tab-btn.active {
+  background: var(--bg-card); 
+}
+
+.signup-form {
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 0.6rem 0.6rem;
+  padding: 2.4rem;
+  background: var(--bg-card);
+}
+
+.input-group {
+  margin-bottom: 1.6rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: 4.2rem;
+  padding: 0 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  background: #fff;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: rgba(42, 179, 75, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(42, 179, 75, 0.15);
+}
+
+.with-btn {
+  display: grid;
+  grid-template-columns: 1fr 9rem; 
+  gap: 1rem;
+  align-items: end;
+}
+
+.phone-inputs {
+  display: grid;
+  grid-template-columns: 8rem 1fr 1fr;
+  gap: 1rem;
+}
+
+#seller-fields {
+  margin-top: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.agreement input[type="checkbox"] {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.agreement label {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.sub-btn {
+  height: 4.2rem;
+  border-radius: 0.4rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.sub-btn:hover {
+  filter: brightness(0.95);
+}
+
+.main-btn {
+  width: 100%;
+  height: 4.6rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.0rem;
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.main-btn:disabled {
+  background: #cfcfcf; 
+  cursor: not-allowed;
+  filter: none;
+}
+
+.error-msg {
+  min-height: 1.6rem;
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--danger-color); 
+}
+
+.error-msg--success {
+  color: var(--success-color);
+}
+
+.input-error {
+  border-color: var(--danger-color) !important;
+  outline-color: var(--danger-color);
+}
+
+.phone-inputs.input-error > input,
+.phone-inputs.input-error > select {
+  border-color: var(--danger-color);
+  outline-color: var(--danger-color);
 }
