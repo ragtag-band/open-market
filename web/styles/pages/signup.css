@@ -1,27 +1,269 @@
+/* 
+   Common states
+*/
+
 .hidden {
   display: none;
 }
 
+/* 
+   Error / Success
+*/
+
 .error-msg {
-  min-height: 16px;
-  margin-top: 6px;
-  font-size: 12px;
-  line-height: 16px;
-  color: #d32f2f;
+  min-height: 1.6rem;
+  margin-top: var(--space-xs);
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--color-danger);
 }
 
 .error-msg--success {
-  color: #2e7d32;
+  color: var(--color-success);
 }
 
 .input-error {
-  border-color: #d32f2f !important;
-  outline-color: #d32f2f;
+  border-color: var(--color-danger) !important;
+  outline-color: var(--color-danger);
 }
 
-/* ✅ 휴대폰 번호 그룹 에러 */
 .phone-inputs.input-error > input,
 .phone-inputs.input-error > select {
-  border-color: #d32f2f;
-  outline-color: #d32f2f;
+  border-color: var(--color-danger);
+  outline-color: var(--color-danger);
+}
+
+/*
+   Page layout
+*/
+
+body {
+  background: var(--bg-page);
+}
+
+.signup-container {
+  width: min(42rem, calc(100% - 4rem));
+  margin: 6rem auto;
+  padding: 0;
+}
+
+/*
+   Logo
+*/
+
+.signup-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 7.5rem;
+}
+
+.signup-logo img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/*
+   Tabs
+*/
+
+.signup-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* border: 1px solid var(--border-color); */
+  border: none;
+  /* border-radius: var(--radius-md) var(--radius-md) 0 0; */
+  overflow: hidden;
+}
+
+.tab-btn {
+  padding: 1.2rem 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.tab-btn.active {
+  background: var(--bg-card);
+  border-bottom: none;
+}
+
+/*
+   Form
+*/
+
+.signup-form {
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+}
+
+.input-group {
+  margin-bottom: var(--space-md);
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 1.4rem;
+  background: #fff;
+}
+
+.input-group input{
+padding-right: 4.8rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 0.2rem rgba(42, 179, 75, 0.15);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .check-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.8rem;
+  height: auto;
+  color: #f2f2f2;
+  pointer-events: none;
+  
+}
+
+.check-icon.is-valid {
+  color: var(--brand-green);
+}
+
+.input-with-icon .check-icon.is-invalid {
+  color: var(--color-danger);
+}
+
+/*
+   Special layouts
+*/
+
+.with-btn {
+  display: grid;
+  grid-template-columns: 1fr 9rem;
+  gap: var(--space-sm);
+  align-items: end;
+}
+
+.phone-inputs {
+  display: grid;
+  grid-template-columns: 8rem 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+#seller-fields {
+  margin-top: var(--space-sm);
+}
+
+/*
+   Agreement
+*/
+
+.agreement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.agreement input[type="checkbox"] {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.agreement label {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
+.agreement a {
+  color: #767676;
+  font-weight: 700;
+}
+
+.signup-footer {
+  padding: 3rem 3.5rem;
+}
+
+.signup-footer .agreement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.signup-footer .main-btn {
+  margin-top: 3rem;
+}
+
+/*
+   Buttons
+*/
+
+.sub-btn {
+  height: var(--input-height);
+  border-radius: var(--radius-sm);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.sub-btn:hover {
+  filter: brightness(0.95);
+}
+
+.main-btn {
+  width: 100%;
+  height: var(--button-height);
+  border-radius: var(--radius-sm);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: var(--space-md);
+  color: #fff;
+  background: var(--brand-green);
+}
+
+.main-btn:disabled {
+  background: #cfcfcf;
+  cursor: not-allowed;
+  filter: none;
+}
+
+@media (max-width: 400px) {
+  .signup-form {
+    padding: var(--space-md);
+  }
+
+  .with-btn {
+    grid-template-columns: 1fr;
+  }
+
+  
+
 }

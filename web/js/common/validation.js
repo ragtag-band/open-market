@@ -46,10 +46,6 @@ export function validateSignup(values) {
     }
   }
 
-  if (!values.agree) {
-    errors.agree = "약관에 동의해야 가입할 수 있습니다.";
-  }
-
   const isValid = Object.keys(errors).length === 0;
 
   const normalized = isValid
@@ -59,13 +55,35 @@ export function validateSignup(values) {
   return { isValid, errors, normalized };
 }
 
+function getCheckIcon(formEl, key) {
+  return formEl.querySelector(`.check-icon[data-check="${key}"]`);
+}
+
+function setCheckIconState(formEl, key, state) {
+  const icon = getCheckIcon(formEl, key);
+  if (!icon) return;
+
+  icon.classList.remove("is-valid", "is-invalid");
+  if (state === "valid") icon.classList.add("is-valid");
+  if (state === "invalid") icon.classList.add("is-invalid");
+}
+
+function isPasswordKey(key) {
+  return key === "password" || key === "passwordConfirm";
+}
+
 export function clearInlineErrors(formEl) {
   formEl.querySelectorAll("[data-error-for]").forEach((el) => {
     el.textContent = "";
     el.classList.remove("error-msg--success");
   });
+
   formEl.querySelectorAll(".input-error").forEach((el) => {
     el.classList.remove("input-error");
+  });
+
+  formEl.querySelectorAll(".check-icon").forEach((icon) => {
+    icon.classList.remove("is-valid", "is-invalid");
   });
 }
 
@@ -75,12 +93,32 @@ export function clearFieldMessage(formEl, key, inputSelector) {
     msgEl.textContent = "";
     msgEl.classList.remove("error-msg--success");
   }
+
   if (inputSelector) {
     formEl.querySelector(inputSelector)?.classList.remove("input-error");
+  }
+
+  if (isPasswordKey(key)) {
+    setCheckIconState(formEl, key, null);
   }
 }
 
 export function showFieldError(formEl, key, message, inputSelector) {
+  if (isPasswordKey(key)) {
+    const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
+    if (msgEl) {
+      msgEl.textContent = ""; 
+      msgEl.classList.remove("error-msg--success");
+    }
+
+    setCheckIconState(formEl, key, "invalid");
+
+    if (inputSelector) {
+      formEl.querySelector(inputSelector)?.classList.add("input-error");
+    }
+    return;
+  }
+
   const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
   if (msgEl) {
     msgEl.textContent = message;
@@ -92,6 +130,8 @@ export function showFieldError(formEl, key, message, inputSelector) {
 }
 
 export function showFieldSuccess(formEl, key, message) {
+  if (isPasswordKey(key)) return;
+
   const msgEl = formEl.querySelector(`[data-error-for="${key}"]`);
   if (!msgEl) return;
   msgEl.textContent = message;
@@ -113,6 +153,23 @@ export function showInlineErrors(formEl, errors) {
   Object.entries(errors).forEach(([key, message]) => {
     showFieldError(formEl, key, message, INPUT_MAP[key]);
   });
+
+  const pw = formEl.querySelector("#password")?.value?.trim() ?? "";
+  const pw2 = formEl.querySelector("#password-confirm")?.value?.trim() ?? "";
+
+  if (!errors.password) {
+    setCheckIconState(formEl, "password", pw ? "valid" : null);
+    if (pw) formEl.querySelector(INPUT_MAP.password)?.classList.remove("input-error");
+
+  }
+
+  if (!errors.passwordConfirm) {
+    const ok = pw && pw2 && pw === pw2;
+    setCheckIconState(formEl, "passwordConfirm", ok ? "valid" : null);
+    if (ok) {
+      formEl.querySelector(INPUT_MAP.passwordConfirm)?.classList.remove("input-error");
+    }
+  }
 
   const firstKey = Object.keys(errors)[0];
   if (firstKey && INPUT_MAP[firstKey]) {

@@ -125,7 +125,7 @@ function productCardHTML(p) {
 
   // 카드 하나의 HTML 반환
   return `
-    <a class="product-card" href="./detail.html?product_id=${id}">
+    <a class="product-card" href="/html/detail.html?product_id=${id}">
       <div class="product-thumb">
         <img src="${imageSrc}" alt="${name}" loading="lazy" />
       </div>

@@ -1,5 +1,6 @@
-import { api } from "./common/api.js";
-import { signup } from "./common/auth.js";
+import { api } from "/js/common/api.js";
+import { signup } from "/js/common/auth.js";
+import { initUserTypeTabs } from "/js/common/until.js";
 import {
   validateSignup,
   isEmail,
@@ -12,7 +13,7 @@ import {
 
 let userType = "buyer";
 
-const signupForm = document.querySelector(".signup-form");
+const signupForm = document.getElementById("signup-form");
 const sellerFields = document.getElementById("seller-fields");
 const tabBuyer = document.getElementById("tab-buyer");
 const tabSeller = document.getElementById("tab-seller");
@@ -59,17 +60,19 @@ function buildSignupPayload(values, normalized) {
   return payload;
 }
 
-function setUserType(selectedType) {
-  userType = selectedType;
-  const isSeller = userType === "seller";
+const tabs = initUserTypeTabs({
+  tabBuyer,
+  tabSeller,
+  initial: "buyer",
+  onChange: (type) => {
+    userType = type;
 
-  sellerFields.classList.toggle("hidden", !isSeller);
+    const isSeller = userType === "seller";
+    sellerFields.classList.toggle("hidden", !isSeller);
 
-  tabSeller.classList.toggle("active", isSeller);
-  tabBuyer.classList.toggle("active", !isSeller);
-
-  clearInlineErrors(signupForm);
-}
+    clearInlineErrors(signupForm);
+  },
+});
 
 function syncAgreeState() {
   signupButton.disabled = !agreeCheck.checked;
@@ -79,9 +82,6 @@ function invalidateUsernameValidation() {
   isUsernameValidated = false;
   clearFieldMessage(signupForm, "username", "#username");
 }
-
-tabBuyer.addEventListener("click", () => setUserType("buyer"));
-tabSeller.addEventListener("click", () => setUserType("seller"));
 
 agreeCheck.addEventListener("change", () => {
   syncAgreeState();
@@ -177,7 +177,7 @@ signupForm.addEventListener("submit", async (event) => {
     const hasSellerError =
       "companyRegistrationNumber" in errors || "storeName" in errors;
 
-    if (hasSellerError) setUserType("seller");
+    if (hasSellerError) tabs.setType("seller");
 
     showInlineErrors(signupForm, errors);
     return;
@@ -193,7 +193,7 @@ signupForm.addEventListener("submit", async (event) => {
   try {
     await signup(signupData, userType);
     alert("회원가입이 완료되었습니다!");
-    // window.location.href = "/html/signin.html";
+    window.location.href = "/index.html";
   } catch (error) {
     showFieldError(
       signupForm,
@@ -204,5 +204,4 @@ signupForm.addEventListener("submit", async (event) => {
   }
 });
 
-setUserType(userType);
 syncAgreeState();

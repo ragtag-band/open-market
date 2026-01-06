@@ -25,7 +25,7 @@
           </p>
           <!-- 버튼 -->
           <div class="error__actions">
-            <a href="/html/index.html" class="btn btn--primary">메인으로</a>
+            <a href="/index.html" class="btn btn--primary">메인으로</a>
             <button type="button" class="btn btn--ghost" id="backBtn">
               이전 페이지
             </button>
@@ -37,7 +37,7 @@
     <script>
       document.getElementById("backBtn").addEventListener("click", () => {
         if (history.length > 1) history.back();
-        else location.href = "/html/index.html";
+        else location.href = "/index.html";
       });
     </script>
   </body>

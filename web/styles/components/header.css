@@ -3,7 +3,7 @@
 :root {
   --header-bg: #fff;
   --header-line: rgba(0, 0, 0, 0.12);
-  --brand: var(--success-color, #2dbf5a);
+  --brand: var(--color-success, #2dbf5a);
   --text: #111;
   --muted: #666;
 }

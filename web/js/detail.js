@@ -5,6 +5,7 @@ import { API_BASE_URL, STORAGE_KEYS } from "./common/config.js";
 
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
+
 /** ========================================================
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화

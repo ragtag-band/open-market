@@ -1,12 +1,32 @@
 /* CSS 변수 */
 
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --success-color: #28a745;
-  --danger-color: #dc3545;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
-  --light-color: #f8f9fa;
-  --dark-color: #343a40;
+/* Brand */
+  --brand-green: #21bf48;
+
+/* Base colors */
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-muted: #6b7280;
+
+/* Background */
+  --bg-page: #ffffff;
+  --bg-card: #ffffff;
+
+/* Border */
+  --border-color: #e5e7eb;
+
+/* Radius */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.6rem;
+
+/* Size */
+  --input-height: 4.2rem;
+  --button-height: 4.6rem;
+
+/* Spacing */
+  --space-xs: 0.6rem;
+  --space-sm: 1.0rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
 }
