@@ -100,19 +100,27 @@
         </div>
       </div>
       <!-------------------------------------------------->
-      <!---/////product menu/////-->
+      <!---/////tab section/////-->
       <!-------------------------------------------------->
-      <div class="product-menu">
-        <button type="button" class="btn-menu basic-font">상품정보</button>
-        <button type="button" class="btn-menu basic-font">리뷰</button>
-        <button type="button" class="btn-menu basic-font">문의사항</button>
-        <button type="button" class="btn-menu basic-font">반품/교환정보</button>
-      </div>
-      <div class="item-contents">
-        <div class="item-description">상품정보 내역입니다.</div>
-        <div class="item-review">리뷰 내역입니다.</div>
-        <div class="item-question">제품 관련 Q&A</div>
-        <div class="item-exchange">반품/교환정보 입니다.</div>
+      <div class="tab-section">
+        <div class="product-menu">
+          <button type="button" class="btn-menu basic-font active-tab">
+            상품정보
+          </button>
+          <button type="button" class="btn-menu basic-font">리뷰</button>
+          <button type="button" class="btn-menu basic-font">문의사항</button>
+          <button type="button" class="btn-menu basic-font">반품/교환</button>
+        </div>
+        <div class="contents">
+          <div class="tab-content basic-font active-tab" id="descript">
+            상품정보 내역입니다.
+          </div>
+          <div class="tab-content basic-font" id="review">리뷰 내역입니다.</div>
+          <div class="tab-content basic-font" id="question">제품 관련 Q&A</div>
+          <div class="tab-content basic-font" id="exchange">
+            반품/교환 정보입니다.
+          </div>
+        </div>
       </div>
     </main>
     <!-------------------------------------------------->
