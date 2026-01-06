@@ -5,7 +5,6 @@ import { API_BASE_URL, STORAGE_KEYS } from "./common/config.js";
 
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
-
 /** ========================================================
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화
@@ -196,6 +195,21 @@ function initEventListeners() {
     });
   }
   // cart modal -2
+  if (DOM.closeCartNdBtn) {
+    DOM.closeCartNdBtn.addEventListener("click", () =>
+      hideModal(DOM.cartModalSecond)
+    );
+  }
+  if (DOM.btnNoCartNd) {
+    DOM.btnNoCartNd.addEventListener("click", () =>
+      hideModal(DOM.cartModalSecond)
+    );
+  }
+  if (DOM.btnYesCartNd) {
+    DOM.btnYesCartNd.addEventListener("click", () => {
+      window.location.href = "./cart.html";
+    });
+  }
 }
 
 /** ========================================================
@@ -240,6 +254,7 @@ function updateQuantityDisplay() {
  * - 스토리지에 저장된 로그인 정보에 따라
  * - 로그아웃 : 로그인 모달 표시
  * - 로그인 : 주문 데이터를 생성하여 오더 페이지로 이동
+ * - 오더 페이지를 생성하지 않았기에 404페이지로 이동
  */
 function handleBuyNow() {
   // 1. 로그인 정보 확인 (localStorage에서 token 확인)
@@ -263,8 +278,9 @@ function handleBuyNow() {
   };
 
   // 4. 주문 데이터를 오더 페이지로 이동
+  // - 오더 페이지를 생성하지 않았기에 404페이지로 이동
   sessionStorage.setItem("orderData", JSON.stringify(orderData));
-  window.location.href = "./cart.html";
+  window.location.href = "./404.html";
 }
 
 /** ========================================================
@@ -313,7 +329,7 @@ function handleAddToCart() {
     cart.push(cartItem);
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // 11-7. "장바구니 담기 성공" 모달 표시
+    // 7. "장바구니 담기 성공" 모달 표시
     showModal(DOM.cartModalFirst);
   }
 }
