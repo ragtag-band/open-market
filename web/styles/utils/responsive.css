@@ -1,1 +1,21 @@
 /* 반응형 유틸리티 */
+
+@media (max-width: 400px) {
+  .signup-form {
+    padding: var(--space-md);
+  }
+
+  .with-btn {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-footer {
+    padding:0;
+  }
+
+  .signup-logo img {
+  width: auto;
+  height: 6.5rem;
+ 
+}
+}
