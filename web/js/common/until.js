@@ -44,21 +44,20 @@ export function initUserTypeTabs({
 
 /**
  * [경로 최적화 함수]
- * 현재 페이지의 위치(루트 또는 /html/ 폴더)를 자동으로 감지하여 
- * 목적지 파일까지의 정확한 상대 경로를 반환합니다.
- * * @param {string} targetFileName - 이동하고자 하는 파일명 (예: 'index.html', 'signin.html')
- * @returns {string} - 현재 위치가 반영된 최종 상대 경로
- * * @example
- * // 상세페이지(html/)에서 실행 시: "../index.html" 반환
- * // 메인페이지(/)에서 실행 시: "./index.html" 반환
- * getSafePath("index.html"); 
+ * 현재 페이지의 위치를 감지하여 목적지별 최적의 상대 경로를 반환합니다.
+ * * @param {string} target - 이동할 파일명 또는 리소스 경로 (예: 'index.html', 'assets/logo.png')
+ * @returns {string} - 계산된 상대 경로
  */
-export function getSafePath(targetFileName) {
-  const isSubPage = window.location.pathname.includes("/html/");
+export function getSafePath(target) {
+  const isSub = window.location.pathname.includes("/html/");
   
-  if (targetFileName === "index.html" || targetFileName === "404.html") {
-    return isSubPage ? `../${targetFileName}` : `./${targetFileName}`;
+  if (
+    target === "index.html" || 
+    target === "404.html" || 
+    target.startsWith("assets/")
+  ) {
+    return isSub ? `../${target}` : `./${target}`;
   }
-  
-  return isSubPage ? `./${targetFileName}` : `./html/${targetFileName}`;
+
+  return isSub ? `./${target}` : `./html/${target}`;
 }

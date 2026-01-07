@@ -3,7 +3,7 @@
 
 import { api } from "./api.js";
 import { STORAGE_KEYS } from "./config.js";
-import { getPathPrefix } from "./until.js";
+import { getSafePath } from "./until.js";
 
 /**
  * 로그인 처리 함수
@@ -33,7 +33,6 @@ export async function signin({ username, password }) {
  * - 메인 페이지로 이동
  */
 export async function signout() {
-  const { prefix } = getPathPrefix();
 
   localStorage.removeItem(STORAGE_KEYS.ACCESS);
   localStorage.removeItem(STORAGE_KEYS.REFRESH);
@@ -43,7 +42,7 @@ export async function signout() {
 
   alert("로그아웃 되었습니다.");
 
-  window.location.href = `${prefix}index.html`;
+  window.location.href = getSafePath("index.html");
 }
 
 /**

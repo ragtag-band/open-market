@@ -11,20 +11,15 @@
 
 // 푸터는 페이지 하단에 항상 위치하므로 헤더와 달리 별도의 위치 지정이 필요없음
 
-import { getPathPrefix } from "./until.js";
+import { getSafePath } from "./until.js";
 
-const { prefix } = getPathPrefix();
+const spritePath = getSafePath("assets/icons/sprite.svg");
 
 // 푸터 요소 생성(푸터 태그 생성)
 const footer = document.createElement("footer");
 
 // CSS 스타일을 적용하기 위해 footer 클래스를 추가
 footer.className = "footer";
-
-// ==========================================================
-// 경로 프리픽스(Prefix) 설정
-// 현재 주소에 '/html/'이 포함되어 있으면 한 단계 위(../)로 설정
-// ==========================================================
 
 // JS로 앞에 만들어둔 푸터 요소에 아래에 HTML 코드를 삽입
 footer.innerHTML = `
@@ -43,20 +38,20 @@ footer.innerHTML = `
     <div class="footer-sns">
       <a href="https://www.instagram.com/" class="social-icon instagram" aria-label="Instagram">
         <svg width="32" height="32">
-          <use href="${prefix}assets/icons/sprite.svg#icon-instagram"></use>
+          <use href="${spritePath}#icon-instagram"></use>
         </svg>
       </a>
 
       <!-- 페이스북 -->
       <a href="https://www.facebook.com/" class="social-icon facebook" aria-label="Facebook">
         <svg width="32" height="32">
-          <use href="${prefix}assets/icons/sprite.svg#icon-facebook"></use>
+          <use href="${spritePath}#icon-facebook"></use>
         </svg>
       </a>
       <!-- 유튜브 -->
       <a href="https://www.youtube.com/" class="social-icon youtube" aria-label="YouTube">
         <svg width="32" height="32">
-          <use href="${prefix}assets/icons/sprite.svg#icon-youtube"></use>
+          <use href="${spritePath}#icon-youtube"></use>
         </svg>
       </a>
     </div>

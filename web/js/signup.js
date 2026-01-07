@@ -7,7 +7,7 @@
 
 import { api } from "./common/api.js";
 import { signup } from "./common/auth.js";
-import { initUserTypeTabs, getPathPrefix } from "./common/until.js";
+import { initUserTypeTabs, getSafePath } from "./common/until.js";
 import {
   validateSignup,
   isEmail,
@@ -17,8 +17,6 @@ import {
   showFieldError,
   showFieldSuccess,
 } from "./common/validation.js";
-
-const { prefix } = getPathPrefix();
 
 let userType = "buyer";
 
@@ -233,7 +231,7 @@ signupForm.addEventListener("submit", async (event) => {
   try {
     await signup(signupData, userType);
     alert("회원가입이 완료되었습니다!");
-    window.location.href = `${prefix}index.html`;
+    window.location.href = getSafePath("index.html");
   } catch (error) {
     showFieldError(
       signupForm,
