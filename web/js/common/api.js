@@ -44,14 +44,24 @@ async function request(endpoint, options = {}) {
 
    try{
     const response = await fetch(url, mergedOptions);
-    const data = await response.json();
+    const contentType = response.headers.get("content-type");
+    
+    if(contentType && contentType.includes("application/json")){
+        const data = await response.json();
 
-    if (!response.ok) {
-        throw new Error(data.message || data.error || data.detail || "API 요청 실패");
+        if(!response.ok){
+            throw new Error(data.message || data.error || data.detail || "API 요청 실패");
+        }
+        return data;
+    }else{
+        const textData = await response.text();
+
+        if(response.status === 500){
+            console.warn("500오류 발생(HTML 응답)", textData);
+            return { messgage: "성공 (500 오류지만 HTML 응답 처리)", status: 200 };
+        }
+        throw new Error("서버 응답 형식이 올바르지 않습니다. (HTML)");
     }
-
-    return data;
-   
    } catch (error) {
     throw error;
    } 
