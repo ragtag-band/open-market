@@ -75,7 +75,15 @@ function renderCart() {
       (item, index) => `
     <div class="cart-item" data-index="${index}">
       <button type="button" class="check-box item-checkbox" data-index="${index}" data-checked="true"></button>
-      <img src="${item.image}" alt="${item.product_name}" class="item-image">
+      <img src="${
+        item.image.startsWith("http")
+          ? item.image
+          : "/" + item.image.replace(/^\/+/, "")
+      }" 
+       alt="${
+         item.product_name
+       }" class="item-image" onerror="this.src='https://via.placeholder.com/160'"
+       >
       <div class="item-details">
         <p class="item-seller basic-font-rg">${
           item.seller || "판매자 정보 없음"
