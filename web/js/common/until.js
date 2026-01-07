@@ -56,8 +56,8 @@ export function initUserTypeTabs({
 export function getSafePath(targetFileName) {
   const isSubPage = window.location.pathname.includes("/html/");
   
-  if (targetFileName === "index.html") {
-    return isSubPage ? "../index.html" : "./index.html";
+  if (targetFileName === "index.html" || targetFileName === "404.html") {
+    return isSubPage ? `../${targetFileName}` : `./${targetFileName}`;
   }
   
   return isSubPage ? `./${targetFileName}` : `./html/${targetFileName}`;
