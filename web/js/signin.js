@@ -4,12 +4,15 @@
 
 import { signin } from "./common/auth.js";
 import { initUserTypeTabs } from "./common/until.js";
+import { getPathPrefix } from "./common/until.js";
 
 const signinForm = document.getElementById("signin-form");
 const signupBtn = document.getElementById("btn-signup");
 const tabBuyer = document.getElementById("tab-buyer");
 const tabSeller = document.getElementById("tab-seller");
 const errorMsg = document.getElementById("signin-error");
+
+const { prefix, htmlPrefix } = getPathPrefix();
 
 const tabs = initUserTypeTabs({
   tabBuyer,
@@ -18,7 +21,6 @@ const tabs = initUserTypeTabs({
 });
 
 errorMsg.textContent = "";
-
 
 signinForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -31,14 +33,12 @@ signinForm.addEventListener("submit", async (event) => {
     const data = await signin({ username, password });
 
     alert("로그인 성공");
-    window.location.href = "/index.html";
+    window.location.href = `${prefix}index.html`;
   } catch (err) {
     errorMsg.textContent = err.message;
   }
 });
 
 signupBtn.addEventListener("click", () => {
-  window.location.href = "../html/signup.html";
+  window.location.href = `${htmlPrefix}signup.html`;
 });
-
-
