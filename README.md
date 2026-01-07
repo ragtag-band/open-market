@@ -2,19 +2,12 @@
 
 # 오합지졸 – Open Market (Vanilla JavaScript)
 
-🔗 배포 주소
-https://ragtag-band.github.io/open-market/
-
-🔗 노션 주소
-https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
-
 ## 1. 프로젝트 개요
 
 본 프로젝트는 Vanilla JavaScript만을 사용하여
 로그인, 회원가입, 상품 조회, 장바구니까지의 기본적인 오픈마켓 사용자 흐름을 구현하는 것을 목표로 진행한 팀 프로젝트입니다.
 
-프레임워크에 의존하지 않고 DOM 제어, 이벤트 처리, API 통신, 상태 관리 등을 직접 구현하며
-웹 애플리케이션의 동작 원리를 이해하는 데 중점을 두었습니다.
+프레임워크에 의존하지 않고 DOM 제어, 이벤트 처리, API 통신, 상태 관리 등을 직접 구현하며 웹 애플리케이션의 동작 원리를 이해하는 데 중점을 두었습니다.
 
 ## 2. 팀 정보
 
@@ -28,7 +21,14 @@ https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
 - [유다겸](https://github.com/yud43991-cpu) - QA
 
 프로젝트 형태: 팀 프로젝트
+
 개발 방식: Vanilla JavaScript 기반 MPA (Multi Page Application)
+
+🔗 배포 주소
+https://ragtag-band.github.io/open-market/
+
+🔗 노션 주소
+https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
 
 ## 3. 구현 기능
 
