@@ -1,4 +1,5 @@
 // 장바구니 페이지
+
 /** ========================================================
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화
@@ -80,10 +81,10 @@ function renderCart() {
           ? item.image
           : "/" + item.image.replace(/^\/+/, "")
       }" 
-       alt="${
-         item.product_name
-       }" class="item-image" onerror="this.src='https://via.placeholder.com/160'"
-       >
+        alt="${
+          item.product_name
+        }"  class="item-image" onerror="this.src='https://via.placeholder.com/160'"
+      >
       <div class="item-details">
         <p class="item-seller basic-font-rg">${
           item.seller || "판매자 정보 없음"
@@ -290,7 +291,7 @@ function checkout() {
   }
 
   // 주문 페이지로 이동 (선택된 상품 정보 전달)
-  sessionStorage.setItem("orderItems", JSON.stringify(selectedItems));
+  localStorage.setItem("orderItems", JSON.stringify(selectedItems));
   location.href = "/order.html";
 }
 
