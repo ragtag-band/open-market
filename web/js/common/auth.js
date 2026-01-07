@@ -32,9 +32,11 @@ const data = await api.post("/accounts/signin", { username, password });
  * - 메인 페이지로 이동
  */
 export async function signout() {
-  localStorage.removeItem(STORAGE_KEYS.ACCESS);
-  localStorage.removeItem(STORAGE_KEYS.REFRESH);
-  localStorage.removeItem(STORAGE_KEYS.USER);
+  // localStorage.removeItem(STORAGE_KEYS.ACCESS);
+  // localStorage.removeItem(STORAGE_KEYS.REFRESH);
+  // localStorage.removeItem(STORAGE_KEYS.USER);
+
+  localStorage.clear();
 
   alert("로그아웃 되었습니다.");
 

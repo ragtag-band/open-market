@@ -239,6 +239,11 @@ function updateTotalPrice() {
 /** ========================================================
  *  수량 변경
  * ========================================================*/
+
+function saveCart(){
+  sessionStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cartItems));
+}
+
 function updateQuantity(index, change) {
   if (!cartItems[index]) return;
 
