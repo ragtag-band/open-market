@@ -34,7 +34,6 @@ function initCart() {
  */
 function loadCartItems() {
   try {
-    // const cartData = localStorage.getItem(STORAGE_KEYS.CART);
     const cartData = sessionStorage.getItem(STORAGE_KEYS.CART);
     cartItems = cartData ? JSON.parse(cartData) : [];
   } catch (error) {
