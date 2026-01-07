@@ -13,7 +13,7 @@
 
 import { getPathPrefix } from "./until.js";
 
-const { prefix, htmlPrefix } = getPathPrefix();
+const { prefix } = getPathPrefix();
 
 // 푸터 요소 생성(푸터 태그 생성)
 const footer = document.createElement("footer");

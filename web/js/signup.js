@@ -7,7 +7,7 @@
 
 import { api } from "./common/api.js";
 import { signup } from "./common/auth.js";
-import { initUserTypeTabs } from "./common/until.js";
+import { initUserTypeTabs, getPathPrefix } from "./common/until.js";
 import {
   validateSignup,
   isEmail,
@@ -16,7 +16,9 @@ import {
   clearFieldMessage,
   showFieldError,
   showFieldSuccess,
-} from "/js/common/validation.js";
+} from "./common/validation.js";
+
+const { prefix } = getPathPrefix();
 
 let userType = "buyer";
 
@@ -92,7 +94,8 @@ function invalidateUsernameValidation() {
 
 agreeCheck.addEventListener("change", () => {
   syncAgreeState();
-  if (agreeCheck.checked) clearFieldMessage(signupForm, "agree", "#agree-check");
+  if (agreeCheck.checked)
+    clearFieldMessage(signupForm, "agree", "#agree-check");
 });
 
 function validateAndRenderField(fieldKey) {
@@ -121,17 +124,33 @@ function validateAndRenderField(fieldKey) {
 }
 
 usernameInput.addEventListener("input", invalidateUsernameValidation);
-usernameInput.addEventListener("blur", () => validateAndRenderField("username"));
+usernameInput.addEventListener("blur", () =>
+  validateAndRenderField("username")
+);
 
-document.getElementById("password").addEventListener("blur", () => validateAndRenderField("password"));
-document.getElementById("password-confirm").addEventListener("blur", () => validateAndRenderField("passwordConfirm"));
-document.getElementById("name").addEventListener("blur", () => validateAndRenderField("name"));
+document
+  .getElementById("password")
+  .addEventListener("blur", () => validateAndRenderField("password"));
+document
+  .getElementById("password-confirm")
+  .addEventListener("blur", () => validateAndRenderField("passwordConfirm"));
+document
+  .getElementById("name")
+  .addEventListener("blur", () => validateAndRenderField("name"));
 
-document.getElementById("phone-2").addEventListener("blur", () => validateAndRenderField("phone"));
-document.getElementById("phone-3").addEventListener("blur", () => validateAndRenderField("phone"));
+document
+  .getElementById("phone-2")
+  .addEventListener("blur", () => validateAndRenderField("phone"));
+document
+  .getElementById("phone-3")
+  .addEventListener("blur", () => validateAndRenderField("phone"));
 
-companyRegInput?.addEventListener("blur", () => validateAndRenderField("companyRegistrationNumber"));
-storeNameInput?.addEventListener("blur", () => validateAndRenderField("storeName"));
+companyRegInput?.addEventListener("blur", () =>
+  validateAndRenderField("companyRegistrationNumber")
+);
+storeNameInput?.addEventListener("blur", () =>
+  validateAndRenderField("storeName")
+);
 
 agreeCheck.addEventListener("blur", () => validateAndRenderField("agree"));
 
@@ -141,7 +160,12 @@ btnCheckId.addEventListener("click", async () => {
   invalidateUsernameValidation();
 
   if (!username) {
-    showFieldError(signupForm, "username", "이메일(아이디)을 입력해주세요.", "#username");
+    showFieldError(
+      signupForm,
+      "username",
+      "이메일(아이디)을 입력해주세요.",
+      "#username"
+    );
     return;
   }
 
@@ -160,7 +184,11 @@ btnCheckId.addEventListener("click", async () => {
     isUsernameValidated = true;
 
     clearFieldMessage(signupForm, "username", "#username");
-    showFieldSuccess(signupForm, "username", data.message || "사용 가능한 아이디입니다.");
+    showFieldSuccess(
+      signupForm,
+      "username",
+      data.message || "사용 가능한 아이디입니다."
+    );
   } catch (err) {
     isUsernameValidated = false;
     showFieldError(
@@ -191,7 +219,12 @@ signupForm.addEventListener("submit", async (event) => {
   }
 
   if (!isUsernameValidated) {
-    showFieldError(signupForm, "username", "아이디 중복확인을 먼저 해주세요.", "#username");
+    showFieldError(
+      signupForm,
+      "username",
+      "아이디 중복확인을 먼저 해주세요.",
+      "#username"
+    );
     return;
   }
 
@@ -200,7 +233,7 @@ signupForm.addEventListener("submit", async (event) => {
   try {
     await signup(signupData, userType);
     alert("회원가입이 완료되었습니다!");
-    window.location.href = "/index.html";
+    window.location.href = `${prefix}index.html`;
   } catch (error) {
     showFieldError(
       signupForm,
