@@ -2,13 +2,6 @@
 
 # 오합지졸 – Open Market (Vanilla JavaScript)
 
-#### 팀원
-
-- [조준환](https://github.com/JunHwanJo) - 총괄, 로그인/회원가입, 공통코드
-- [문규리](https://github.com/kyuriii-moon) - 장바구니, 상품 상세 페이지 구현
-- [정성민](https://github.com/sungminjung066-lang) - 메인 화면 UI/UX , 에러페이지 구현
-- [유다겸](https://github.com/yud43991-cpu) - QA
-
 🔗 배포 주소
 https://ragtag-band.github.io/open-market/
 
@@ -25,10 +18,16 @@ https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
 
 ## 2. 팀 정보
 
-팀명: 오합지졸
+#### 팀명: 오합지졸
+
+#### 팀원
+
+- [조준환](https://github.com/JunHwanJo) - 총괄, 로그인/회원가입, 공통코드
+- [문규리](https://github.com/kyuriii-moon) - 장바구니, 상품 상세 페이지 구현
+- [정성민](https://github.com/sungminjung066-lang) - 메인 화면 UI/UX , 에러페이지 구현
+- [유다겸](https://github.com/yud43991-cpu) - QA
 
 프로젝트 형태: 팀 프로젝트
-
 개발 방식: Vanilla JavaScript 기반 MPA (Multi Page Application)
 
 ## 3. 구현 기능
@@ -121,6 +120,7 @@ https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
 
 ## 4. 프로젝트 구조
 
+```
 📂openmarket_project
 ├ 📂.git
 ├ 📂server
@@ -178,6 +178,7 @@ https://www.notion.so/2-bdcab15e7b394e3b8d0ae786b3bd1ff3
 ├📜PROJECT.md
 ├📜README.md
 └📜발표자료(예시-README 파일에 작성)
+```
 
 ## 5. 실행 방법
 
