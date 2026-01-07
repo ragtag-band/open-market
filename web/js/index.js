@@ -125,7 +125,7 @@ function productCardHTML(p) {
 
   // 카드 하나의 HTML 반환
   return `
-    <a class="product-card" href="/html/detail.html?product_id=${id}">
+    <a class="product-card" href="./html/detail.html?product_id=${id}">
       <div class="product-thumb">
         <img src="${imageSrc}" alt="${name}" loading="lazy" />
       </div>
@@ -233,21 +233,40 @@ function escapeHtml(str) {
 }
 
 // 이미지 경로 보정 함수
+// function normalizeImageSrc(src) {
+//   const s = String(src ?? "").trim();
+//   if (!s) return "";
+
+//   // 이미 절대 URL이면 그대로 사용
+//   if (s.startsWith("http://") || s.startsWith("https://")) return s;
+
+//   // 프론트 로컬 assets 경로 처리
+//   if (s.startsWith("./assets/")) return "../" + s.slice(2);
+//   if (s.startsWith("assets/")) return "../" + s;
+//   if (s.startsWith("/assets/")) return s;
+
+//   // 서버 상대 경로 처리
+//   if (s.startsWith("./")) return `${ASSET_BASE_URL}/${s.slice(2)}`;
+//   if (s.startsWith("/")) return `${ASSET_BASE_URL}${s}`;
+
+//   return `${ASSET_BASE_URL}/${s}`;
+// }
 function normalizeImageSrc(src) {
   const s = String(src ?? "").trim();
   if (!s) return "";
 
-  // 이미 절대 URL이면 그대로 사용
-  if (s.startsWith("http://") || s.startsWith("https://")) return s;
+  // 1. 이미 인터넷 주소(http)라면 그대로 사용 (배포된 API 서버 이미지 등)
+  if (s.startsWith("http")) return s;
 
-  // 프론트 로컬 assets 경로 처리
-  if (s.startsWith("./assets/")) return "../" + s.slice(2);
-  if (s.startsWith("assets/")) return "../" + s;
-  if (s.startsWith("/assets/")) return s;
+  // 2. 만약 로컬 assets 폴더의 이미지를 사용하는 경우
+  // 현재 위치(web/index.html)를 기준으로 경로를 고정합니다.
+  // s가 "assets/images/product1.png" 라면 앞에 ./ 를 붙여줍니다.
+  if (s.includes("assets/")) {
+    // 기존에 붙어있던 ./ 나 / 를 제거하고 깔끔하게 ./assets 로 시작하게 만듭니다.
+    const cleanPath = s.replace(/^\.?\//, "");
+    return `./${cleanPath}`;
+  }
 
-  // 서버 상대 경로 처리
-  if (s.startsWith("./")) return `${ASSET_BASE_URL}/${s.slice(2)}`;
-  if (s.startsWith("/")) return `${ASSET_BASE_URL}${s}`;
-
+  // 3. 그 외의 경우 (서버에서 파일명만 보내주는 경우 등)
   return `${ASSET_BASE_URL}/${s}`;
 }

@@ -4,11 +4,11 @@
 // 헤더를 추가할 위치에 <header id="header"></header> 태그를 추가
 
 // 2. js 스크립트 추가
-// <script type="module" src="../js/common/header.js"></script> 을
+// <script type="module" src="./js/common/header.js"></script> 을
 // body 태그 아래에 스크립트로 추가(defer을 사용해서 위에 작성해도 OK)
 
 // 3. 스타일시트 추가
-// <link rel="stylesheet" href="../styles/components/header.css" /> 를 head 태그 영역에 추가
+// <link rel="stylesheet" href="./styles/components/header.css" /> 를 head 태그 영역에 추가
 
 import { signout } from "./auth.js";
 
@@ -24,9 +24,9 @@ let authMenuHTML = "";
 if (accessToken) {
   // 로그인 상태 → 마이페이지
   authMenuHTML = `
-    <a class="header__menu-item" href="../html/index.html" id="btn-logout" aria-label="임시 로그아웃">
+    <a class="header__menu-item" href="./index.html" id="btn-logout" aria-label="임시 로그아웃">
       <svg class="icon" aria-hidden="true">
-        <use href="../assets/icons/sprite.svg#icon-user"></use>
+        <use href="./assets/icons/sprite.svg#icon-user"></use>
       </svg>
       <span class="header__menu-text">마이페이지</span>
     </a>
@@ -34,9 +34,9 @@ if (accessToken) {
 } else {
   // 비로그인 상태 → 로그인
   authMenuHTML = `
-    <a class="header__menu-item" href="../html/signin.html" aria-label="로그인">
+    <a class="header__menu-item" href="./html/signin.html" aria-label="로그인">
       <svg class="icon" aria-hidden="true">
-        <use href="../assets/icons/sprite.svg#icon-user"></use>
+        <use href="./assets/icons/sprite.svg#icon-user"></use>
       </svg>
       <span class="header__menu-text">로그인</span>
     </a>
@@ -51,8 +51,8 @@ const headerHTML = `
   <div class="header__inner">
     <!-- 로고 -->
     <h1 class="header__logo">
-      <a href="/index.html" aria-label="홈으로">
-        <img src="../assets/images/Logo-jadu.png" alt="ZADU" />
+      <a href="./index.html" aria-label="홈으로">
+        <img src="./assets/images/Logo-jadu.png" alt="ZADU" />
       </a>
     </h1>
 
@@ -66,7 +66,7 @@ const headerHTML = `
       />
       <button class="header__search-btn" type="submit" aria-label="검색">
         <svg class="icon">
-          <use href="../assets/icons/sprite.svg#icon-search"></use>
+          <use href="./assets/icons/sprite.svg#icon-search"></use>
         </svg>
       </button>
     </form>
@@ -76,10 +76,10 @@ const headerHTML = `
       ${authMenuHTML}
 
       <a class="header__menu-item"
-        href="../html/cart.html"
+        href="./html/cart.html"
         aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
-          <use href="../assets/icons/sprite.svg#icon-cart"></use>
+          <use href="./assets/icons/sprite.svg#icon-cart"></use>
         </svg>
         <span class="header__menu-text">장바구니</span>
       </a>
@@ -126,7 +126,7 @@ if (form && input) {
     const keyword = input.value.trim();
 
     // 다른 페이지에서 검색해도 index로 이동하면서 search 전달
-    const url = new URL("/index.html", window.location.href);
+    const url = new URL("./index.html", window.location.href);
     if (keyword) url.searchParams.set("search", keyword);
     else url.searchParams.delete("search");
 

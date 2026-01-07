@@ -3,11 +3,11 @@
 //공통 컴포넌트 푸터 사용법
 
 // 1. js 스크립트 추가
-// <script type="module" src="../js/common/footer.js"></script> 을
+// <script type="module" src="./js/common/footer.js"></script> 을
 // body 태그 아래에 스크립트로 추가(defer을 사용해서 위에 작성해도 OK)
 
 // 2. 스타일시트 추가
-// <link rel="stylesheet" href="../styles/components/footer.css" /> 를 head 태그 영역에 추가
+// <link rel="stylesheet" href="./styles/components/footer.css" /> 를 head 태그 영역에 추가
 
 // 푸터는 페이지 하단에 항상 위치하므로 헤더와 달리 별도의 위치 지정이 필요없음
 
@@ -34,20 +34,20 @@ footer.innerHTML = `
     <div class="footer-sns">
       <a href="https://www.instagram.com/" class="social-icon instagram" aria-label="Instagram">
         <svg width="32" height="32">
-          <use href="../assets/icons/sprite.svg#icon-instagram"></use>
+          <use href="./assets/icons/sprite.svg#icon-instagram"></use>
         </svg>
       </a>
 
       <!-- 페이스북 -->
       <a href="https://www.facebook.com/" class="social-icon facebook" aria-label="Facebook">
         <svg width="32" height="32">
-          <use href="../assets/icons/sprite.svg#icon-facebook"></use>
+          <use href="./assets/icons/sprite.svg#icon-facebook"></use>
         </svg>
       </a>
       <!-- 유튜브 -->
       <a href="https://www.youtube.com/" class="social-icon youtube" aria-label="YouTube">
         <svg width="32" height="32">
-          <use href="../assets/icons/sprite.svg#icon-youtube"></use>
+          <use href="./assets/icons/sprite.svg#icon-youtube"></use>
         </svg>
       </a>
     </div>
