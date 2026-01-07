@@ -86,14 +86,22 @@ function renderCart() {
         }"  class="item-image" onerror="this.src='https://via.placeholder.com/160'"
       >
       <div class="item-details">
+<<<<<<< HEAD
         <p class="item-seller basic-font-rg">${
+=======
+        <p class="item-seller basic-font">${
+>>>>>>> 49a0279cd918eaf55a02682e4ab403f9f1227161
           item.seller || "판매자 정보 없음"
         }</p>
         <p class="item-name basic-font-md">${item.product_name}</p>
         <p class="item-unit-price basic-font-bk">${formatPrice(
           item.price
         )}원</p>
+<<<<<<< HEAD
         <p class="item-shipping basic-font-rg">택배배송 / 무료배송</p>
+=======
+        <p class="item-shipping basic-font">택배배송 / 무료배송</p>
+>>>>>>> 49a0279cd918eaf55a02682e4ab403f9f1227161
       </div>
       <div class="item-quantity-control">
         <button class="quantity-btn decrease" data-index="${index}">
@@ -112,10 +120,17 @@ function renderCart() {
         </button>
       </div>
       <div class="item-total-price">
+<<<<<<< HEAD
         <p class="total-price-text basic-font-bk">${formatPrice(
           item.price * item.quantity
         )}원</p>
         <button class="item-delete basic-font-wh" data-index="${index}">주문하기</button>
+=======
+        <p class="total-price-text basic-font-rd">${formatPrice(
+          item.price * item.quantity
+        )}원</p>
+        <button class="item-order basic-font-wh" data-index="${index}">주문하기</button>
+>>>>>>> 49a0279cd918eaf55a02682e4ab403f9f1227161
       </div>
     </div>
   `
@@ -133,6 +148,7 @@ function renderCart() {
   orderSection.innerHTML = `
     <div class="order-summary">
       <div class="summary-row">
+<<<<<<< HEAD
         <p class="basic-font-rg">총 상품금액</p>
         <p class="basic-font-md product-total">0원</p>
       </div>
@@ -150,6 +166,30 @@ function renderCart() {
       </div>
     </div>
     <button class="order-btn">주문하기</button>
+=======
+        <p class="basic-font-bk">총 상품금액</p>
+        <p class="basic-font-bk product-total">0원</p>
+      </div>
+      <div class="operator hidden"> - </div>
+      <div class="summary-row">
+        <p class="basic-font-bk">상품 할인</p>
+        <p class="basic-font-bk discount-total">0원</p>
+      </div>
+      <div class="operator hidden"> + </div>
+      <div class="summary-row">
+        <p class="basic-font-bk">배송비</p>
+        <p class="basic-font-bk shipping-total">0원</p>
+      </div>
+      <div class="operator hidden"> = </div>
+      <div class="summary-row total">
+        <p class="basic-font-bk">결제 예정 금액</p>
+        <p class="basic-font-rd final-total">0원</p>
+      </div>
+    </div>
+    <div class="button-order">
+     <button class="item-order order-btn font-order">주문하기</button>
+    </div>
+>>>>>>> 49a0279cd918eaf55a02682e4ab403f9f1227161
   `;
 
   updateAllCheckboxes();
@@ -234,6 +274,14 @@ function updateTotalPrice() {
 /** ========================================================
  *  수량 변경
  * ========================================================*/
+<<<<<<< HEAD
+=======
+
+function saveCart(){
+  sessionStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cartItems));
+}
+
+>>>>>>> 49a0279cd918eaf55a02682e4ab403f9f1227161
 function updateQuantity(index, change) {
   if (!cartItems[index]) return;
 

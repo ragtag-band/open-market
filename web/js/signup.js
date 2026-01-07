@@ -1,3 +1,10 @@
+// =========================
+// 회원가입 페이지 컨트롤러
+// - DOM 이벤트 관리
+// - 유효성 검증 연결
+// - API 호출 및 화면 상태 제어
+// =========================
+
 import { api } from "/js/common/api.js";
 import { signup } from "/js/common/auth.js";
 import { initUserTypeTabs } from "/js/common/until.js";
@@ -9,7 +16,7 @@ import {
   clearFieldMessage,
   showFieldError,
   showFieldSuccess,
-} from "./common/validation.js";
+} from "/js/common/validation.js";
 
 let userType = "buyer";
 

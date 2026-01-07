@@ -1,4 +1,6 @@
-// 로그인
+// ===============================
+// 로그인 페이지 스크립트
+// ===============================
 
 import { signin } from "/js/common/auth.js";
 import { initUserTypeTabs } from "/js/common/until.js";
