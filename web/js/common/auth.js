@@ -1,8 +1,8 @@
 // 로그인 / 회원가입 관련 API 함수 모음
 // - 인증(auth)과 관련된 모든 요청을 담당하는 모듈
 
-import { api } from "/js/common/api.js";
-import { STORAGE_KEYS } from "/js/common/config.js";
+import { api } from "./api.js";
+import { STORAGE_KEYS } from "./config.js";
 
 /**
  * 로그인 처리 함수

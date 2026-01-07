@@ -4,7 +4,7 @@
  * - 인증 토큰이 있으면 Authorization 헤더 자동 포함
  */
 
-import { API_BASE_URL, STORAGE_KEYS } from "/js/common/config.js";
+import { API_BASE_URL, STORAGE_KEYS } from "./config.js";
 
 /**
  * request
