@@ -14,7 +14,11 @@ import { signout } from "./auth.js";
 import { getSafePath } from "./until.js";
 
 const spritePath = getSafePath("assets/icons/sprite.svg");
-const imgaePath = getSafePath("assets/images");
+const imagePath = getSafePath("assets/images");
+
+const indexPath = getSafePath("index.html");
+const signinPath = getSafePath("signin.html");
+const cartPath = getSafePath("cart.html");
 
 // header id를 가진 요소를 찾는다
 const header = document.getElementById("header");
@@ -28,7 +32,7 @@ let authMenuHTML = "";
 if (accessToken) {
   // 로그인 상태 → 마이페이지
   authMenuHTML = `
-    <a class="header__menu-item" href="getSafePath("index.html")" id="btn-logout" aria-label="임시 로그아웃">
+    <a class="header__menu-item" href="${indexPath}" id="btn-logout" aria-label="임시 로그아웃">
       <svg class="icon" aria-hidden="true">
         <use href="${spritePath}#icon-user"></use>
       </svg>
@@ -38,7 +42,7 @@ if (accessToken) {
 } else {
   // 비로그인 상태 → 로그인
   authMenuHTML = `
-    <a class="header__menu-item" href="getSafePath("signin.html")" aria-label="로그인">
+    <a class="header__menu-item" href="${signinPath}" aria-label="로그인">
       <svg class="icon" aria-hidden="true">
         <use href="${spritePath}#icon-user"></use>
       </svg>
@@ -55,8 +59,8 @@ const headerHTML = `
   <div class="header__inner">
     <!-- 로고 -->
     <h1 class="header__logo">
-      <a href="getSafePath("index.html")" aria-label="홈으로">
-        <img src="${imgaePath}/Logo-jadu.png" alt="ZADU" />
+      <a href="${indexPath}" aria-label="홈으로">
+        <img src="${imagePath}/Logo-jadu.png" alt="ZADU" />
       </a>
     </h1>
 
@@ -80,7 +84,7 @@ const headerHTML = `
       ${authMenuHTML}
 
       <a class="header__menu-item"
-        href="getSafePath("cart.html")"
+        href="${cartPath}"
         aria-label="장바구니">
         <svg class="icon" aria-hidden="true">
           <use href="${spritePath}#icon-cart"></use>
