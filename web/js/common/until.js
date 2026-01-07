@@ -13,7 +13,12 @@
  *  - getType(): 현재 선택된 userType 반환
  *  - setType(type): 외부에서 userType 강제 변경 가능
  */
-export function initUserTypeTabs({ tabBuyer, tabSeller, initial = "buyer", onChange }) {
+export function initUserTypeTabs({
+  tabBuyer,
+  tabSeller,
+  initial = "buyer",
+  onChange,
+}) {
   let userType = initial;
 
   function setType(type) {
@@ -34,5 +39,18 @@ export function initUserTypeTabs({ tabBuyer, tabSeller, initial = "buyer", onCha
   return {
     getType: () => userType,
     setType,
+  };
+}
+
+/**
+ * 현재 페이지 위치를 기반으로 상대 경로 prefix를 반환하는 함수
+ * @returns {Object} { prefix, htmlPrefix }
+ */
+export function getPathPrefix() {
+  const isSubPage = window.location.pathname.includes("/html/");
+
+  return {
+    prefix: isSubPage ? "../" : "./",
+    htmlPrefix: isSubPage ? "./" : "./html/",
   };
 }

@@ -11,6 +11,10 @@
 
 // 푸터는 페이지 하단에 항상 위치하므로 헤더와 달리 별도의 위치 지정이 필요없음
 
+import { getPathPrefix } from "./until.js";
+
+const { prefix, htmlPrefix } = getPathPrefix();
+
 // 푸터 요소 생성(푸터 태그 생성)
 const footer = document.createElement("footer");
 
@@ -21,8 +25,6 @@ footer.className = "footer";
 // 경로 프리픽스(Prefix) 설정
 // 현재 주소에 '/html/'이 포함되어 있으면 한 단계 위(../)로 설정
 // ==========================================================
-const isSubPage = window.location.pathname.includes("/html/");
-const prefix = isSubPage ? "../" : "./";
 
 // JS로 앞에 만들어둔 푸터 요소에 아래에 HTML 코드를 삽입
 footer.innerHTML = `

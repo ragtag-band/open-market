@@ -3,6 +3,7 @@
 
 import { api } from "./api.js";
 import { STORAGE_KEYS } from "./config.js";
+import { getPathPrefix } from "./until.js";
 
 /**
  * 로그인 처리 함수
@@ -16,12 +17,12 @@ import { STORAGE_KEYS } from "./config.js";
  * @returns {Object} 서버에서 반환한 로그인 응답 데이터
  */
 export async function signin({ username, password }) {
-const data = await api.post("/accounts/signin", { username, password });
-  
+  const data = await api.post("/accounts/signin", { username, password });
+
   localStorage.setItem(STORAGE_KEYS.ACCESS, data.access);
   localStorage.setItem(STORAGE_KEYS.REFRESH, data.refresh);
   localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data.user));
-  
+
   return data;
 }
 
@@ -32,15 +33,17 @@ const data = await api.post("/accounts/signin", { username, password });
  * - 메인 페이지로 이동
  */
 export async function signout() {
-  // localStorage.removeItem(STORAGE_KEYS.ACCESS);
-  // localStorage.removeItem(STORAGE_KEYS.REFRESH);
-  // localStorage.removeItem(STORAGE_KEYS.USER);
+  const { prefix } = getPathPrefix();
 
-  localStorage.clear();
+  localStorage.removeItem(STORAGE_KEYS.ACCESS);
+  localStorage.removeItem(STORAGE_KEYS.REFRESH);
+  localStorage.removeItem(STORAGE_KEYS.USER);
+
+  // localStorage.clear();
 
   alert("로그아웃 되었습니다.");
 
-  window.location.href = "/index.html";
+  window.location.href = `${prefix}index.html`;
 }
 
 /**
@@ -52,8 +55,10 @@ export async function signout() {
  * @returns {Object} 서버에서 반환한 회원가입 결과 데이터
  */
 export async function signup(signupData, userType) {
-  let url = userType === "seller" ? "/accounts/seller/signup" : "/accounts/buyer/signup";
+  let url =
+    userType === "seller"
+      ? "/accounts/seller/signup"
+      : "/accounts/buyer/signup";
   const data = await api.post(url, signupData);
   return data;
 }
-   

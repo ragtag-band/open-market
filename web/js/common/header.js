@@ -11,6 +11,9 @@
 // <link rel="stylesheet" href="./styles/components/header.css" /> 를 head 태그 영역에 추가
 
 import { signout } from "./auth.js";
+import { getPathPrefix } from "./until.js";
+
+const { prefix, htmlPrefix } = getPathPrefix();
 
 // header id를 가진 요소를 찾는다
 const header = document.getElementById("header");
@@ -22,9 +25,6 @@ const accessToken = localStorage.getItem("access_token");
 // 경로 프리픽스(Prefix) 설정
 // 현재 주소에 '/html/'이 포함되어 있으면 한 단계 위(../)로 설정
 // ==========================================================
-const isSubPage = window.location.pathname.includes("/html/");
-const prefix = isSubPage ? "../" : "./";
-const htmlPrefix = isSubPage ? "./" : "./html/";
 
 // 로그인 여부에 따라 HTML이 들어갈 자리
 let authMenuHTML = "";
