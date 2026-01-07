@@ -4,6 +4,9 @@
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화
  */
+
+import { getSafePath } from "./common/until.js";
+
 const DOM = {
   checkAll: document.querySelector("#check-all"),
   cartPage: document.querySelector(".cart-page"),
@@ -78,9 +81,9 @@ function renderCart() {
       <button type="button" class="check-box item-checkbox" data-index="${index}" data-checked="true"></button>
       <img src="${
         item.image.startsWith("http")
-          ? item.image
-          : "/" + item.image.replace(/^\/+/, "")
-      }" 
+       ? item.image
+        : "../" + item.image.replace(/^\/+/, "") 
+  }"
         alt="${
           item.product_name
         }"  class="item-image" onerror="this.src='https://via.placeholder.com/160'"
@@ -302,7 +305,7 @@ function checkout() {
 
   // 주문 페이지로 이동 (선택된 상품 정보 전달)
   localStorage.setItem("orderItems", JSON.stringify(selectedItems));
-  location.href = "/order.html";
+  location.href = getSafePath("404.html");
 }
 
 /** ========================================================
