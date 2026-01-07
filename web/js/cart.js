@@ -1,4 +1,5 @@
 // 장바구니 페이지
+
 /** ========================================================
  * cosnt DOM
  * - 한번에 정의하여 특정 요소 호출 시 코드 간소화
@@ -33,7 +34,7 @@ function initCart() {
  */
 function loadCartItems() {
   try {
-    const cartData = localStorage.getItem(STORAGE_KEYS.CART);
+    const cartData = sessionStorage.getItem(STORAGE_KEYS.CART);
     cartItems = cartData ? JSON.parse(cartData) : [];
   } catch (error) {
     console.error("장바구니 데이터 로드 실패:", error);
@@ -75,7 +76,15 @@ function renderCart() {
       (item, index) => `
     <div class="cart-item" data-index="${index}">
       <button type="button" class="check-box item-checkbox" data-index="${index}" data-checked="true"></button>
-      <img src="${item.image}" alt="${item.product_name}" class="item-image">
+      <img src="${
+        item.image.startsWith("http")
+          ? item.image
+          : "/" + item.image.replace(/^\/+/, "")
+      }" 
+        alt="${
+          item.product_name
+        }"  class="item-image" onerror="this.src='https://via.placeholder.com/160'"
+      >
       <div class="item-details">
         <p class="item-seller basic-font-rg">${
           item.seller || "판매자 정보 없음"
@@ -282,7 +291,7 @@ function checkout() {
   }
 
   // 주문 페이지로 이동 (선택된 상품 정보 전달)
-  sessionStorage.setItem("orderItems", JSON.stringify(selectedItems));
+  localStorage.setItem("orderItems", JSON.stringify(selectedItems));
   location.href = "/order.html";
 }
 

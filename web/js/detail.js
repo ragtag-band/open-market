@@ -302,7 +302,7 @@ function handleAddToCart() {
   // 3. 기존 장바구니 데이터 불러오기
   let cart = [];
   try {
-    cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart = JSON.parse(sessionStorage.getItem("cart") || "[]");
   } catch (e) {
     cart = [];
   }
@@ -327,7 +327,7 @@ function handleAddToCart() {
     };
 
     cart.push(cartItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cart", JSON.stringify(cart));
 
     // 7. "장바구니 담기 성공" 모달 표시
     showModal(DOM.cartModalFirst);
