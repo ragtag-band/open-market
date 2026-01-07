@@ -181,13 +181,13 @@ body {
 }
 
 .item-seller {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--gray-color);
   margin: 0;
 }
 
 .item-name {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--black-color);
   line-height: 1.4;
@@ -202,7 +202,7 @@ body {
 }
 
 .item-shipping {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--gray-color);
   margin: 0;
 }
@@ -287,13 +287,15 @@ body {
 /* order-section ============================= */
 .order-section {
   width: 95%;
-  max-width: 30rem;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 .order-btn {
-  padding: 1rem;
+  padding: 2rem;
+  width: 30%;
+  max-width: 20rem;
 }
 
 /* order-summary ============================= */
@@ -304,6 +306,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .summary-row {
@@ -324,12 +327,12 @@ body {
 }
 
 .summary-row p:first-child {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--black-color);
 }
 
 .summary-row p:last-child {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--black-color);
 }
@@ -338,7 +341,15 @@ body {
   font-size: 1.5rem;
   color: var(--red-color);
 }
-
+.hidden {
+  display: none;
+}
+.button-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 4rem 0;
+}
 /* checkout-btn ============================= */
 .checkout-btn {
   width: 100%;
@@ -367,7 +378,7 @@ body {
 /*             font style              */
 /* ------------------------------------*/
 .basic-font {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: var(--gray-color);
 }
 .basic-font-bk {
@@ -384,4 +395,53 @@ body {
   font-size: 1.4rem;
   color: var(--white-color);
   font-weight: normal;
+}
+.font-order {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1rem;
+  color: var(--white-color);
+}
+@media (min-width: 780px) {
+  .basic-font {
+    font-size: 1.4rem;
+  }
+  .basic-font-bk,
+  .basic-font-rd {
+    font-size: 2rem;
+  }
+  .order-summary {
+    flex-direction: row;
+  }
+  .summary-row {
+    flex-direction: column;
+    flex: 1;
+  }
+  .summary-row.total {
+    border: none;
+    padding-top: 1rem;
+    margin-top: 0;
+  }
+  .summary-row p:first-child {
+    font-size: 1.5rem;
+    color: var(--black-color);
+  }
+
+  .summary-row p:last-child {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black-color);
+  }
+
+  .summary-row.total p:last-child {
+    font-size: 2.5rem;
+    color: var(--red-color);
+  }
+  .hidden {
+    display: block;
+  }
+  .operator {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
 }
