@@ -2,8 +2,8 @@
 // 로그인 페이지 스크립트
 // ===============================
 
-import { signin } from "/js/common/auth.js";
-import { initUserTypeTabs } from "/js/common/until.js";
+import { signin } from "./common/auth.js";
+import { initUserTypeTabs } from "./common/until.js";
 
 const signinForm = document.getElementById("signin-form");
 const signupBtn = document.getElementById("btn-signup");
@@ -38,7 +38,7 @@ signinForm.addEventListener("submit", async (event) => {
 });
 
 signupBtn.addEventListener("click", () => {
-  window.location.href = "/html/signup.html";
+  window.location.href = "../html/signup.html";
 });
 
 

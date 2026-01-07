@@ -5,9 +5,9 @@
 // - API 호출 및 화면 상태 제어
 // =========================
 
-import { api } from "/js/common/api.js";
-import { signup } from "/js/common/auth.js";
-import { initUserTypeTabs } from "/js/common/until.js";
+import { api } from "./common/api.js";
+import { signup } from "./common/auth.js";
+import { initUserTypeTabs } from "./common/until.js";
 import {
   validateSignup,
   isEmail,
