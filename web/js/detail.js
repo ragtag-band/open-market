@@ -2,9 +2,7 @@
 
 import { api } from "./common/api.js";
 import { API_BASE_URL, STORAGE_KEYS } from "./common/config.js";
-import { getPathPrefix } from "./common/until.js";
-
-const { prefix } = getPathPrefix();
+import { getSafePath } from "./common/until.js";
 
 const ASSET_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
@@ -94,7 +92,7 @@ async function loadProductDetail(productId) {
     // error : 로딩 실패 시 메인으로 이동
     console.error("상품 로딩 실패:", error);
     alert("상품 정보를 불러오는데 실패했습니다.");
-    window.location.href = `${prefix}index.html`;
+    window.location.href = getSafePath("index.html");
   }
 }
 // - api 호출 중 loading 표시
@@ -177,7 +175,7 @@ function initEventListeners() {
 
   if (DOM.btnYes) {
     DOM.btnYes.addEventListener("click", () => {
-      window.location.href = `${prefix}signin.html`;
+      window.location.href = getSafePath("signin.html");
     });
   }
 
@@ -194,7 +192,7 @@ function initEventListeners() {
   }
   if (DOM.btnYesCartSt) {
     DOM.btnYesCartSt.addEventListener("click", () => {
-      window.location.href = `${prefix}cart.html`;
+      window.location.href = getSafePath("cart.html");
     });
   }
   // cart modal -2
@@ -210,7 +208,7 @@ function initEventListeners() {
   }
   if (DOM.btnYesCartNd) {
     DOM.btnYesCartNd.addEventListener("click", () => {
-      window.location.href = `${prefix}cart.html`;
+      window.location.href = getSafePath("cart.html");
     });
   }
 }
@@ -283,7 +281,7 @@ function handleBuyNow() {
   // 4. 주문 데이터를 오더 페이지로 이동
   // - 오더 페이지를 생성하지 않았기에 404페이지로 이동
   sessionStorage.setItem("orderData", JSON.stringify(orderData));
-  window.location.href = `${prefix}404.html`;
+  window.location.href = getSafePath("404.html");
 }
 
 /** ========================================================
