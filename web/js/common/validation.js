@@ -225,7 +225,7 @@ export function showFieldSuccess(formEl, key, message) {
  * @param {HTMLElement} formEl
  * @param {Object} errors - validateSignup()이 만든 errors
  */
-export function showInlineErrors(formEl, errors) {
+export function showInlineErrors(formEl, errors, shouldFocus = true) {
   const INPUT_MAP = {
     username: "#username",
     password: "#password",
@@ -259,7 +259,7 @@ export function showInlineErrors(formEl, errors) {
   }
 
   const firstKey = Object.keys(errors)[0];
-  if (firstKey && INPUT_MAP[firstKey]) {
+  if (shouldFocus && firstKey && INPUT_MAP[firstKey]) { 
     formEl.querySelector(INPUT_MAP[firstKey])?.focus?.();
   }
 }

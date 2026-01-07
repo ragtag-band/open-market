@@ -126,12 +126,18 @@ usernameInput.addEventListener("blur", () =>
   validateAndRenderField("username")
 );
 
-document
-  .getElementById("password")
-  .addEventListener("blur", () => validateAndRenderField("password"));
-document
-  .getElementById("password-confirm")
-  .addEventListener("blur", () => validateAndRenderField("passwordConfirm"));
+const pwInput = document.getElementById("password");
+const pwConfirmInput = document.getElementById("password-confirm");
+
+[pwInput, pwConfirmInput].forEach(input => {
+  input.addEventListener("input", () => {
+    const values = getSignupFormValues();
+    const { errors } = validateSignup(values);
+  
+    showInlineErrors(signupForm, errors, false); 
+  });
+});
+
 document
   .getElementById("name")
   .addEventListener("blur", () => validateAndRenderField("name"));
