@@ -1,6 +1,8 @@
 <!--Banner-->
 
-# 오합지졸 – Open Market (Vanilla JavaScript)
+![image](web/assets/images/ohapjijol_banner.svg)
+
+## 오합지졸 – Open Market (Vanilla JavaScript)
 
 ## 1. 프로젝트 개요
 
