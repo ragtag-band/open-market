@@ -1,0 +1,46 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Background -->
+  <rect width="1200" height="400" fill="#ffffff"/>
+  
+  <!-- Decorative circle 1 - top right -->
+  <circle cx="1050" cy="80" r="60" fill="#f0fdf4" opacity="0.5"/>
+  
+  <!-- Decorative circle 2 - bottom left -->
+  <circle cx="150" cy="320" r="80" fill="#f0fdf4" opacity="0.5"/>
+  
+  <!-- Decorative rect 1 - top left -->
+  <rect x="50" y="50" width="100" height="100" rx="15" fill="#f7fee7" opacity="0.7"/>
+  
+  <!-- Decorative rect 2 - bottom right -->
+  <rect x="1050" y="250" width="120" height="120" rx="15" fill="#f7fee7" opacity="0.7"/>
+  
+  <!-- Main Title - ZADU -->
+  <text x="600" y="140" font-family="Quicksand, Comfortaa, Nunito, Arial Rounded MT Bold, sans-serif" font-size="90" font-weight="900" text-anchor="middle" fill="#22c55e" letter-spacing="3">ZADU</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="190" font-family="Arial, sans-serif" font-size="36" fill="#64748b" text-anchor="middle">오픈마켓 플랫폼 프로젝트</text>
+  
+  <!-- Team Badge -->
+  <rect x="500" y="230" width="200" height="50" rx="25" fill="#22c55e"/>
+  <text x="600" y="263" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">2조 · 오합지졸</text>
+  
+  <!-- Left Icon Circle (Shopping Cart) -->
+  <circle cx="250" cy="180" r="40" fill="#dcfce7"/>
+  <text x="250" y="195" font-size="40" text-anchor="middle">🛒</text>
+  
+  <!-- Right Icon Circle (Package) -->
+  <circle cx="950" cy="180" r="40" fill="#dcfce7"/>
+  <text x="950" y="195" font-size="40" text-anchor="middle">📦</text>
+  
+  <!-- Decorative line - left -->
+  <rect x="320" y="200" width="160" height="3" fill="#22c55e" opacity="0.3"/>
+  
+  <!-- Decorative line - right -->
+  <rect x="720" y="200" width="160" height="3" fill="#22c55e" opacity="0.3"/>
+  
+  <!-- Dot - left -->
+  <circle cx="500" cy="200" r="5" fill="#22c55e"/>
+  
+  <!-- Dot - right -->
+  <circle cx="700" cy="200" r="5" fill="#22c55e"/>
+</svg>

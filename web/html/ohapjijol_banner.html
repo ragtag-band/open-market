@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZADU 오픈마켓 프로젝트 배너</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f5f5f5;
+      }
+
+      #banner {
+        width: 1200px;
+        height: 400px;
+        background: #ffffff;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .deco-circle {
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .deco-rect {
+        position: absolute;
+        border-radius: 15px;
+      }
+
+      .main-title {
+        line-height: 1;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .zadu-text {
+        font-family: "Quicksand", "Comfortaa", "Nunito", "Arial Rounded MT Bold",
+          sans-serif;
+        font-size: 90px;
+        font-weight: 900;
+        color: #22c55e;
+        letter-spacing: 3px;
+        margin: 0;
+      }
+
+      .subtitle {
+        font-family: Arial, sans-serif;
+        font-size: 36px;
+        color: #64748b;
+        margin: 10px 0 0 0;
+      }
+
+      .team-badge {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 230px;
+        background: #22c55e;
+        padding: 12px 30px;
+        border-radius: 25px;
+      }
+
+      .team-text {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      .icon-circle {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #dcfce7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+      }
+
+      .line {
+        position: absolute;
+        height: 3px;
+        background: #22c55e;
+        opacity: 0.3;
+        top: 200px;
+      }
+
+      .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #22c55e;
+        top: 197px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner"></div>
+
+    <script>
+      const banner = document.getElementById("banner");
+
+      // Decorative elements
+      const decoElements = [
+        {
+          type: "circle",
+          x: 1050,
+          y: 80,
+          r: 60,
+          color: "#f0fdf4",
+          opacity: 0.5,
+        },
+        {
+          type: "circle",
+          x: 150,
+          y: 320,
+          r: 80,
+          color: "#f0fdf4",
+          opacity: 0.5,
+        },
+        {
+          type: "rect",
+          x: 50,
+          y: 50,
+          w: 100,
+          h: 100,
+          color: "#f7fee7",
+          opacity: 0.7,
+        },
+        {
+          type: "rect",
+          x: 1050,
+          y: 250,
+          w: 120,
+          h: 120,
+          color: "#f7fee7",
+          opacity: 0.7,
+        },
+      ];
+
+      decoElements.forEach((el) => {
+        const div = document.createElement("div");
+        if (el.type === "circle") {
+          div.className = "deco-circle";
+          div.style.width = el.r * 2 + "px";
+          div.style.height = el.r * 2 + "px";
+          div.style.left = el.x - el.r + "px";
+          div.style.top = el.y - el.r + "px";
+        } else {
+          div.className = "deco-rect";
+          div.style.width = el.w + "px";
+          div.style.height = el.h + "px";
+          div.style.left = el.x + "px";
+          div.style.top = el.y + "px";
+        }
+        div.style.background = el.color;
+        div.style.opacity = el.opacity;
+        banner.appendChild(div);
+      });
+
+      // Main title section
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "main-title";
+
+      const zaduText = document.createElement("h1");
+      zaduText.className = "zadu-text";
+      zaduText.textContent = "ZADU";
+
+      const subtitle = document.createElement("p");
+      subtitle.className = "subtitle";
+      subtitle.textContent = "오픈마켓 플랫폼 프로젝트";
+
+      titleDiv.appendChild(zaduText);
+      titleDiv.appendChild(subtitle);
+      banner.appendChild(titleDiv);
+
+      // Team badge
+      const teamBadge = document.createElement("div");
+      teamBadge.className = "team-badge";
+
+      const teamText = document.createElement("p");
+      teamText.className = "team-text";
+      teamText.textContent = "2조 · 오합지졸";
+
+      teamBadge.appendChild(teamText);
+      banner.appendChild(teamBadge);
+
+      // Icon circles
+      const icons = [
+        { emoji: "🛒", x: 250, y: 180 },
+        { emoji: "📦", x: 950, y: 180 },
+      ];
+
+      icons.forEach((icon) => {
+        const circle = document.createElement("div");
+        circle.className = "icon-circle";
+        circle.style.left = icon.x - 40 + "px";
+        circle.style.top = icon.y - 40 + "px";
+        circle.textContent = icon.emoji;
+        banner.appendChild(circle);
+      });
+
+      // Decorative lines
+      const lines = [
+        { x: 320, width: 160 },
+        { x: 720, width: 160 },
+      ];
+
+      lines.forEach((line) => {
+        const lineDiv = document.createElement("div");
+        lineDiv.className = "line";
+        lineDiv.style.left = line.x + "px";
+        lineDiv.style.width = line.width + "px";
+        banner.appendChild(lineDiv);
+      });
+
+      // Dots
+      const dots = [{ x: 500 }, { x: 700 }];
+
+      dots.forEach((dot) => {
+        const dotDiv = document.createElement("div");
+        dotDiv.className = "dot";
+        dotDiv.style.left = dot.x + "px";
+        banner.appendChild(dotDiv);
+      });
+    </script>
+  </body>
+</html>
