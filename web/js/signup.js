@@ -129,7 +129,7 @@ usernameInput.addEventListener("blur", () =>
 const pwInput = document.getElementById("password");
 const pwConfirmInput = document.getElementById("password-confirm");
 
-[pwInput, pwConfirmInput].forEach(input => {
+[pwInput, pwConfirmInput].forEach((input) => {
   input.addEventListener("input", () => {
     const values = getSignupFormValues();
     const { errors } = validateSignup(values);
